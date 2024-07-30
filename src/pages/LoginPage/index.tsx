@@ -1,6 +1,6 @@
-import { useAppSelector } from '../../hooks/redux';
+// import { useAppSelector } from '../../hooks/redux';
 import styles from './styles.module.css';
-import { RootState } from '../../store';
+// import { RootState } from '../../store';
 import { useActions } from '../../hooks/actions';
 import { useNavigate } from 'react-router-dom';
 // import { useEffect } from 'react';
@@ -52,7 +52,7 @@ export default function LoginPage() {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    // formState: { errors },
   } = useForm<Inputs>();
 
   const onSubmitLogin = async (data: Inputs) => {
