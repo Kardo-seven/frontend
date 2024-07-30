@@ -1,0 +1,17 @@
+.zlz {
+  width: 10px;
+  height: 4px;
+  border-radius: 0;
+  &.swiper-pagination-bullet {
+    background-color: var(--Base-White) ;
+    opacity: 1;
+  }
+  &.swiper-pagination-bullet-active {
+    background-color: var(--Base-Carrot);
+  }
+}
+
+.swiper-pagination {
+  margin-bottom: 5.9vh;
+}
+

@@ -1,0 +1,124 @@
+.loginPage {
+  height: 100vh;
+  width: var(--max-desktop-width);
+  background-color: var(--Base-Black);
+}
+
+.loginPage__main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loginPage__logo {
+  margin-top: 48px;
+  margin-bottom: 24px;
+  padding: 0;
+}
+
+.loginPage__title {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 120%;
+  color: var(--Base-White);
+  padding: 0;
+  margin: 0 0 43px 0;
+}
+
+.loginPage__nav {
+  width: 343px;
+  margin-bottom: 24px;
+}
+
+.loginPage__button {
+  width: 50%;
+  height: 48px;
+  color: var(--Base-White);
+  border: none;
+  border-bottom: 1px solid var(--Shade-Gray-Dark);
+  background-color: transparent;
+  padding: 0px 16px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 120%;
+  transition: all 0.3s ease;
+}
+
+.loginPage__button_active {
+  color: var(--Base-Carrot);
+  border-bottom: 1px solid var(--Base-Carrot);
+}
+
+.loginPage__form {
+  padding: 0;
+  margin: 0 0 48px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 24px;
+  flex: 1 1 auto;
+}
+
+.loginPage__inputField {
+  display: flex;
+  flex-direction: column;
+  width: 343px;
+  position: relative;
+}
+
+.loginPage__inputField:last-of-type {
+  margin-bottom: 26px;
+}
+
+.loginPage__input {
+  background-color: transparent;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid var(--Base-White);
+  color: var(--Base-White);
+}
+
+.loginPage__label {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 150%;
+  color: var(--Shade-Gray-Dark);
+}
+
+.loginPage__forgot {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 150%;
+  color: var(--Base-White);
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  left: 0;
+  bottom: -26px;
+  text-decoration: underline;
+  text-underline-offset: 4px
+}
+
+.notificationPersonalData {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 150%;
+  color: var(--Base-White);
+  text-align: center;
+  width: 343px;
+  padding: 0;
+  margin: 0;
+}
+
+.enterWithoutLogin {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 150%;
+  color: var(--Base-White);
+  background-color: transparent;
+  border: none;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  padding: 0;
+  margin-bottom: 46px;
+}

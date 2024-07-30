@@ -1,0 +1,25 @@
+@import url(./vendor/normalize.css);
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+:root {
+  font-family: 'Rubik', Arial, Helvetica, sans-serif;
+  font-optical-sizing: auto;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  font-style: normal;
+
+  background-color: #94a3b8;
+  color: #fff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --Base-White: #fff;
+  --Base-Black: #000;
+  --Base-Carrot: #ff4310;
+  --Opacity-Carrot20: #FF431033;
+  --Shade-Gray-Dark: #808080;
+  --max-desktop-width: 375px;
+}

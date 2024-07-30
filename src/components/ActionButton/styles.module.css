@@ -1,0 +1,30 @@
+.actionButton {
+  color: var(--Base-White);
+  width: 343px;
+  margin: 0 auto;
+  height: 48px;
+  border: none;
+  background-color: var(--Base-Carrot);
+  padding: 10px 24px;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+  transition: all 0.3s ease;
+}
+
+.actionButton:active {
+  transition: all 0.3s ease;
+}
+
+.actionButton_size_s {
+  width: 139px;
+  height: 40px;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.actionButton_secondary {
+  border: 1px solid var(--Base-Carrot);
+  background-color: transparent;
+}

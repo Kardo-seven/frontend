@@ -1,0 +1,99 @@
+.swiper {
+  position: relative;
+  height: 100vh;
+}
+
+.slide__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  max-width: 375px;
+  height: 100vh;
+  opacity: 0.7;
+}
+
+.swiper__nextButton {
+  width: 343px;
+  margin: 0 auto 11.82vh;
+}
+
+.swiper__skipButton {
+  position: absolute;
+  top: 48px;
+  right: 16px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  background-color: transparent;
+  color: var(--Base-White);
+}
+
+.swiper__nextButton_last {
+  margin-bottom: 16px;
+}
+
+.swiper__headerSlide {
+  width: 343px;
+  margin: 50.28vh auto 2.95vh;
+  color: var(--Base-White);
+  text-align: center;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 120%;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.slide__description {
+  width: 343px;
+  margin: 0 auto 8.86vh auto;
+  text-align: center;
+  color: var(--Base-White);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 150%;
+}
+
+.slide__description_last {
+  margin-bottom: 7.75vh;
+}
+
+.slide__isLogin {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 120%;
+  color: var(--Base-White);
+  padding: 0;
+  width: 210px;
+  margin: 0 auto;
+}
+
+.slide__loginButton {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 120%;
+  color: var(--Base-White);
+  background-color: transparent;
+  border: none;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  padding: 0;
+  margin: 0 0 0 8px;
+}
+
+.swiper__backgroundPagination {
+  position: absolute;
+  bottom: 6.4vh;
+  left: 140px;
+  right: 140px;
+  background-color: var(--Opacity-Carrot20);
+  width: 96px;
+  height: 24px;
+  border-radius: 40px;
+}
