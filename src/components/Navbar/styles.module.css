@@ -1,8 +1,8 @@
 .navbar {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   height: 56px;
-  width: 100%;
+  width: 375px;
   color: aqua;
   padding: 2px 36px 25px;
   box-sizing: border-box;

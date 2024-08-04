@@ -1,0 +1,19 @@
+.header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 28px;
+  justify-content: space-between;
+  padding: 44px 16px 0px;
+  box-sizing: border-box;
+  flex: 0 0 auto;
+}
+
+.header__title {
+  font-family: 'Grtsk Tera';
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 120%;
+  padding: 0;
+  margin: 0;
+}

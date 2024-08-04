@@ -12,15 +12,15 @@ import slide1 from '../../assets/images/onboarding/slide1.jpg';
 import slide2 from '../../assets/images/onboarding/slide2.jpg';
 import slide3 from '../../assets/images/onboarding/slide3.jpg';
 import slide4 from '../../assets/images/onboarding/slide4.jpg';
+import { useActions } from '../../hooks/actions';
 
 export default function OnBoarding({
-  setIsOnboardingOpen,
   setIsEnter,
 }: {
-  setIsOnboardingOpen: (isOnboardingOpen: boolean) => void;
   setIsEnter: (isEnter: boolean) => void;
 }) {
   const [isLastSlide, setIsLastSlide] = useState(false);
+  const { setIsOnboardingOpen } = useActions();
 
   const SwiperButtonNext = () => {
     const swiper = useSwiper();

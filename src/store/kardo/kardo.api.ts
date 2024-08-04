@@ -27,7 +27,7 @@ interface RegistrationResponse {
 export const api = createApi({
   reducerPath: 'api',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'http://51.250.32.102:8080/',
+    baseUrl: 'https://kardo.zapto.org//',
     prepareHeaders: (headers) => {
       const authToken = localStorage.getItem('authToken');
       if (authToken) {

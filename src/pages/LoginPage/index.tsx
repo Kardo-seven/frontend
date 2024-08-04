@@ -13,6 +13,7 @@ import {
   useRegistrationMutation,
 } from '../../store/kardo/kardo.api';
 import { useForm } from 'react-hook-form';
+import { useAppSelector } from '../../hooks/redux';
 
 type Inputs = {
   email: string;
@@ -25,7 +26,9 @@ export default function LoginPage() {
   const [registration] = useRegistrationMutation();
   const navigate = useNavigate();
   const [isEnter, setIsEnter] = useState(true);
-  const [isOnboardingOpen, setIsOnboardingOpen] = useState(true);
+  const isOnboardingOpen = useAppSelector(
+    (state) => state.onboarding.isLOnboardingOpen
+  );
 
   // const auth = async () => {
   //   try {
@@ -58,11 +61,9 @@ export default function LoginPage() {
   const onSubmitLogin = async (data: Inputs) => {
     try {
       const res = await login(data).unwrap();
-        localStorage.setItem('authToken', res.token);
-        setLoggedIn(true);
-        navigate('/content');
-        console.log(res);
-      
+      localStorage.setItem('authToken', res.token);
+      setLoggedIn(true);
+      navigate('/content');
     } catch (error) {
       console.log(error);
     }
@@ -84,7 +85,6 @@ export default function LoginPage() {
     <section className={styles.loginPage}>
       {isOnboardingOpen ? (
         <Onboarding
-          setIsOnboardingOpen={setIsOnboardingOpen}
           setIsEnter={setIsEnter}
         />
       ) : (

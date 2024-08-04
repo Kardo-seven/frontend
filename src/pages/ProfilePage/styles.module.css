@@ -31,11 +31,19 @@
   align-items: center;
 }
 
+.mainPage__avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
 .mainPage__name {
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
   line-height: 120%;
+  margin-bottom: 0;
+  margin-top: 8px;
 }
 
 .mainPage__profileDataList {
@@ -70,21 +78,57 @@
   margin-bottom: 28px;
 }
 
-.header {
-  display: flex;
-  width: 100%;
-  margin-bottom: 28px;
-  justify-content: space-between;
-  padding: 44px 16px 0px;
-  box-sizing: border-box;
-  flex: 0 0 auto;
+.mainPage__achievementSection {
+  width: 343px;
+  height: 124px;
+  display: grid;
+  grid-template-columns: 2;
+  grid-template-rows: 2;
 }
 
-.header__title {
-  font-family: 'Grtsk Tera';
-  font-size: 28px;
+.mainPage__achievementHeader {
+  font-size: 18px;
   font-weight: 700;
   line-height: 120%;
   padding: 0;
   margin: 0;
+  grid-column: 1;
+}
+
+.mainPage__achievementAbout {
+  background-color: transparent;
+  width: 24px;
+  height: 24px;
+  border: none;
+  background-image: url('../../assets/images/profile/help.svg');
+  grid-column: 2;
+  justify-self: end;
+  padding: 0;
+}
+
+.mainPage__achievementList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  grid-column: 1/2;
+  grid-row: 2;
+}
+
+.mainPage__achievementItem {
+  width: 70px;
+  height: 84px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.mainPage__achievementCaption {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 120%;
+  margin: 0;
+  padding: 0;
 }
