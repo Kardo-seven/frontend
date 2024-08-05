@@ -24,6 +24,7 @@ export default function LoginPage() {
   const { setLoggedIn } = useActions();
   const [login] = useLoginMutation();
   const [registration] = useRegistrationMutation();
+
   const navigate = useNavigate();
   const [isEnter, setIsEnter] = useState(true);
   const isOnboardingOpen = useAppSelector(
@@ -84,9 +85,7 @@ export default function LoginPage() {
   return (
     <section className={styles.loginPage}>
       {isOnboardingOpen ? (
-        <Onboarding
-          setIsEnter={setIsEnter}
-        />
+        <Onboarding setIsEnter={setIsEnter} />
       ) : (
         <div className={styles.loginPage__main}>
           <img className={styles.loginPage__logo} src={logoImg} alt="" />

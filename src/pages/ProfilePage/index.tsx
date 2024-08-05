@@ -11,11 +11,32 @@ import avatar from '../../assets/images/profile/Avatar.jpg';
 import winner from '../../assets/images/profile/winner.png';
 import prize from '../../assets/images/profile/prize.png';
 import event from '../../assets/images/profile/event.png';
+import { useActions } from '../../hooks/actions';
+import Popup from '../../components/Popup';
+import AchieveInfo from '../../components/AchieveInfo';
+import Modal from '../../components/Modal';
+import AchieveModal from '../../components/AchieveModal';
+import { useState } from 'react';
+import EditAvatar from '../../components/EditAvatar';
+import Menu from '../../components/Menu';
+// import { useLazyGetMyProfileQuery } from '../../store/kardo/kardo.api';
+// import { useEffect } from 'react';
 
 export default function ProfilePage() {
+  // const [triggerMyProfile, { data: profile }] = useLazyGetMyProfileQuery();
+  // useEffect(() => {
+  //   triggerMyProfile();
+  //   console.log(profile);
+  // }, );
+
+  const [openEditAvatar, setOpenEditAvatar] = useState(false);
+  const [openAchieveInfo, setOpenAchieveInfo] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const { openModal, openPopup } = useActions();
   return (
     <section className={styles.section}>
-      <HeaderProfile />
+      <HeaderProfile setIsMenuOpen={setIsMenuOpen} isMenuOpen={isMenuOpen}/>
       <div className={styles.mainPage}>
         <div className={styles.mainPage__content}>
           <div className={styles.mainPage__profileInfo}>
@@ -24,6 +45,10 @@ export default function ProfilePage() {
                 className={styles.mainPage__avatar}
                 src={avatar}
                 alt="аватар"
+                onClick={() => {
+                  setOpenEditAvatar(true);
+                  openPopup();
+                }}
               />
               <h2 className={styles.mainPage__name}>Иван</h2>
             </div>
@@ -47,9 +72,18 @@ export default function ProfilePage() {
           </div>
           <div className={styles.mainPage__achievementSection}>
             <h2 className={styles.mainPage__achievementHeader}>Достижения</h2>
-            <button className={styles.mainPage__achievementAbout}></button>
+            <button
+              className={styles.mainPage__achievementAbout}
+              onClick={() => openModal()}
+            ></button>
             <ul className={styles.mainPage__achievementList}>
-              <li className={styles.mainPage__achievementItem}>
+              <li
+                className={styles.mainPage__achievementItem}
+                onClick={() => {
+                  setOpenAchieveInfo(true);
+                  openPopup();
+                }}
+              >
                 <img
                   src={winner}
                   alt="ачивка"
@@ -77,9 +111,28 @@ export default function ProfilePage() {
               </li>
             </ul>
           </div>
+          <ul>
+            <li>Публикация</li>
+            <li>Публикация</li>
+            <li>Публикация</li>
+          </ul>
         </div>
       </div>
       <Navbar />
+      {openAchieveInfo && (
+        <Popup
+          content={<AchieveInfo />}
+          setOpenAchieveInfo={setOpenAchieveInfo}
+        />
+      )}
+      {openEditAvatar && (
+        <Popup
+          content={<EditAvatar />}
+          setOpenEditAvatar={setOpenEditAvatar}
+        />
+      )}
+      <Modal content={<AchieveModal />} />
+      {isMenuOpen && <Menu isMenuOpen={isMenuOpen} />}
     </section>
   );
 }

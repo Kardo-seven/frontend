@@ -1,23 +1,39 @@
-// import styles from './styles.module.css';
-// import { useAppSelector } from '../../hooks/redux';
-// import { useActions } from '../../hooks/actions';
+import styles from './styles.module.css';
+import { useAppSelector } from '../../hooks/redux';
+import { useActions } from '../../hooks/actions';
 
-// export default function Popup({ content }: { content: JSX.Element }) {
-//   const isPopupOpened = useAppSelector((state) => state.popup.isPopupOpened);
-//   const { closePopup } = useActions();
+export default function Popup({
+  content,
+  setOpenEditAvatar,
+  setOpenAchieveInfo,
+}: {
+  content: JSX.Element;
+  setOpenEditAvatar?: (openEditAvatar: boolean) => void;
+  setOpenAchieveInfo?: (openAchieveInfo: boolean) => void;
+}) {
+  const isPopupOpened = useAppSelector((state) => state.popup.isPopupOpened);
+  const { closePopup } = useActions();
 
-//   function handleClosePopup() {
-//     closePopup();
-//   }
+  function handleClosePopup() {
+    closePopup();
+    if (setOpenEditAvatar) setOpenEditAvatar(false);
+    if (setOpenAchieveInfo) setOpenAchieveInfo(false);
+  }
 
-//   return (
-//     <div
-//       className={`${styles.popup} ${
-//         isPopupOpened === true && `${styles.popup_active}`
-//       }`}
-//     >
-//       <div className={styles.popup__overlay} onClick={handleClosePopup}></div>
-//       <div className={styles.popup__content}>{content}</div>
-//     </div>
-//   );
-// }
+  return (
+    <div
+      className={`${styles.popup} ${
+        isPopupOpened === true && `${styles.popup_active}`
+      }`}
+    >
+      <div className={styles.popup__overlay} onClick={handleClosePopup}></div>
+      <div className={styles.popup__content}>
+        <button
+          className={styles.popup__closeButton}
+          onClick={handleClosePopup}
+        ></button>
+        {content}
+      </div>
+    </div>
+  );
+}

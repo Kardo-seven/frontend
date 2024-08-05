@@ -1,0 +1,34 @@
+.menu {
+  list-style: none;
+  padding: 0;
+  background-color: var(--Base-Black);
+  width: 375px;
+  height: 100vh;
+  position: fixed;
+  top: -14px;
+  display: none;
+  padding: 48px 16px;
+  box-sizing: border-box;
+}
+.menu_active {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.menu__nav {
+}
+
+.menu__item {
+  display: flex;
+  align-items: center;
+  padding-top: 16px;
+  padding-bottom: 18px;
+}
+
+.menu__text {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 120%;
+  padding: 0;
+  margin: 0;
+}
