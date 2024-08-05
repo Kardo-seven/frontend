@@ -6,14 +6,10 @@ export default function Popup({
   content,
   setOpenEditAvatar,
   setOpenAchieveInfo,
-  openEditAvatar,
-  openAchieveInfo,
 }: {
   content: JSX.Element;
   setOpenEditAvatar?: (openEditAvatar: boolean) => void;
   setOpenAchieveInfo?: (openAchieveInfo: boolean) => void;
-  openAchieveInfo?: boolean
-  openEditAvatar? : boolean
 }) {
   const isPopupOpened = useAppSelector((state) => state.popup.isPopupOpened);
   const { closePopup } = useActions();

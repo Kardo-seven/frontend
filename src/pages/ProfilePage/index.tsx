@@ -123,14 +123,12 @@ export default function ProfilePage() {
         <Popup
           content={<AchieveInfo />}
           setOpenAchieveInfo={setOpenAchieveInfo}
-          openAchieveInfo
         />
       )}
       {openEditAvatar && (
         <Popup
           content={<EditAvatar />}
           setOpenEditAvatar={setOpenEditAvatar}
-          openEditAvatar
         />
       )}
       <Modal content={<AchieveModal />} />

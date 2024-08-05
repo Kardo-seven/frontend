@@ -4,12 +4,8 @@ import { useActions } from '../../hooks/actions';
 
 export default function Modal({
   content,
-  setSelectedActiveCard,
-  setSelectedInActiveCard,
 }: {
   content: JSX.Element;
-  setSelectedActiveCard?: (id: number) => void;
-  setSelectedInActiveCard?: (id: number) => void;
 }) {
   const isModalOpened = useAppSelector((state) => state.modal.isModalOpen);
   const { closeModal } = useActions();
