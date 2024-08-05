@@ -3,8 +3,7 @@ import ActionButton from '../../components/ActionButton';
 import { useNavigate } from 'react-router-dom';
 
 export default function NotFoundPage() {
-  
-    const navigate = useNavigate();
+  const navigate = useNavigate();
   return (
     <section className={styles.notFound}>
       <div className={styles.notFound__main}>

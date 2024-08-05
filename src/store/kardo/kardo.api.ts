@@ -54,7 +54,12 @@ export const api = createApi({
       }),
       invalidatesTags: ['Auth'],
     }),
+    getMyProfile: build.query<UserProfile, void>({
+      query: () => ({
+        url: 'user/profile',
+      }),
+    }),
   }),
 });
 
-export const { useLoginMutation, useRegistrationMutation } = api;
+export const { useLoginMutation, useRegistrationMutation, useLazyGetMyProfileQuery } = api;

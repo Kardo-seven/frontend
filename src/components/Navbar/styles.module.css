@@ -6,6 +6,7 @@
   color: aqua;
   padding: 2px 36px 25px;
   box-sizing: border-box;
+  background-color: var(--Base-Black);
 }
 
 .navList {

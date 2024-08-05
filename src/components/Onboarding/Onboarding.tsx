@@ -42,13 +42,20 @@ export default function OnBoarding({
     );
   };
 
-    const SkipButton = () => {
-      return <button className={styles.swiper__skipButton} onClick={() => setIsOnboardingOpen(false)}>Пропустить</button>;
-    };
+  const SkipButton = () => {
+    return (
+      <button
+        className={styles.swiper__skipButton}
+        onClick={() => setIsOnboardingOpen(false)}
+      >
+        Пропустить
+      </button>
+    );
+  };
 
-    const BackgroundPagination = () => {
-      return <div className={styles.swiper__backgroundPagination}></div>;
-    }
+  const BackgroundPagination = () => {
+    return <div className={styles.swiper__backgroundPagination}></div>;
+  };
 
   return (
     <div className={styles.onBoarding__page}>
@@ -71,15 +78,15 @@ export default function OnBoarding({
       >
         <SwiperSlide className={styles.swiper__slide}>
           <SkipButton />
-            <h2 className={styles.swiper__headerSlide}>
-              Добро пожаловать в КАРДО
-            </h2>
-            <p className={styles.slide__description}>
-              Мир КАРДО — это мир уличной культуры и спорта. Здесь переплетаются
-              сотни историй и судеб.
-            </p>
-            <img className={styles.slide__image} src={slide1} alt="слайд1" />
-            <SwiperButtonNext />
+          <h2 className={styles.swiper__headerSlide}>
+            Добро пожаловать в КАРДО
+          </h2>
+          <p className={styles.slide__description}>
+            Мир КАРДО — это мир уличной культуры и спорта. Здесь переплетаются
+            сотни историй и судеб.
+          </p>
+          <img className={styles.slide__image} src={slide1} alt="слайд1" />
+          <SwiperButtonNext />
           <BackgroundPagination />
         </SwiperSlide>
         <SwiperSlide className={styles.slide}>

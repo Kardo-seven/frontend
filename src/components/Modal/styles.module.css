@@ -2,7 +2,7 @@
   width: 375px;
   box-sizing: border-box;
   padding: 0px;
-  background-color: var(--background-popup);
+  background-color: var(--Popup-overlay);
   z-index: 5;
   display: none;
   position: fixed;
@@ -22,15 +22,18 @@
   position: absolute;
   bottom: 0;
   width: 375px;
-  background-color: #fff;
-  border-radius: 24px 24px 0px 0px;
-  padding: 32px 16px 40px 16px;
+  background-color: var(--Base-Black);
+  border-radius: 12px 12px 0px 0px;
+  border-top: 2px solid var(--Base-White);
+  border-right: 2px solid var(--Base-White);
+  border-left: 2px solid var(--Base-White);
+  padding: 16px 16px 32px;
   box-sizing: border-box;
   z-index: 6;
 }
 
 .modal__content:after {
-  content: "";
+  content: '';
   position: absolute;
   top: 8px;
   left: 172.5px;
@@ -38,4 +41,19 @@
   height: 4px;
   background-color: var(--light-neutrals-300);
   border-radius: 12px;
+}
+
+.modal__closeButton {
+  width: 30px;
+  height: 30px;
+  padding: 8.75px;
+  box-sizing: border-box;
+  border: none;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background-image: url(../../assets/images/modal/close_small.svg);
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
 }

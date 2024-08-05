@@ -1,0 +1,25 @@
+.modalContent {
+  margin-bottom: 74px;
+}
+
+.modalContent__header {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 120%;
+  padding: 0;
+  margin: 0 0 18px 0;
+}
+
+.modalContent__text {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  padding: 0;
+  margin: 0 0 12px 0;
+}
+
+.modalContent__textSpan {
+  display: block;
+  color: var(--Base-Carrot);
+}
