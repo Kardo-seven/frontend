@@ -1,23 +1,24 @@
 import styles from './styles.module.css';
 import ActionButton from '../../components/ActionButton';
 import { useNavigate } from 'react-router-dom';
+import notFound from '../../assets/images/system/notFound.png'
 
 export default function NotFoundPage() {
   const navigate = useNavigate();
   return (
     <section className={styles.notFound}>
       <div className={styles.notFound__main}>
-        <h1 className={styles.notFound__title}>Ошибка 404</h1>
+        <img className={styles.notFound__image}src={notFound} alt="" />
+        <h1 className={styles.notFound__title}>Упс, не туда свернул!</h1>
         <p className={styles.notFound__description}>
-          Страницы, которую вы запросили, не существует. Возможно она устарела
-          или была удалена
+          Этой страницы пока нет, но&nbsp;мы&nbsp;скоро&nbsp;забомбим&nbsp;её для тебя!
         </p>
       </div>
       <div
         className={styles.notFound__buttonToMain}
         onClick={() => navigate('/', { replace: true })}
       >
-        <ActionButton title="Вернуться на главную" />
+        <ActionButton title="На главную" />
       </div>
     </section>
   );

@@ -14,6 +14,7 @@ import {
 } from '../../store/kardo/kardo.api';
 import { useForm } from 'react-hook-form';
 import { useAppSelector } from '../../hooks/redux';
+import Navtab from '../../components/Navtab'
 
 type Inputs = {
   email: string;
@@ -26,7 +27,7 @@ export default function LoginPage() {
   const [registration] = useRegistrationMutation();
 
   const navigate = useNavigate();
-  const [isEnter, setIsEnter] = useState(true);
+  const [activeTab, setActiveTab] = useState('enter');
   const isOnboardingOpen = useAppSelector(
     (state) => state.onboarding.isLOnboardingOpen
   );
@@ -74,7 +75,7 @@ export default function LoginPage() {
     try {
       const res = await registration(data).unwrap();
       if (res) {
-        setIsEnter(true);
+        setActiveTab('enter');
         console.log(res);
       }
     } catch (error) {
@@ -85,37 +86,23 @@ export default function LoginPage() {
   return (
     <section className={styles.loginPage}>
       {isOnboardingOpen ? (
-        <Onboarding setIsEnter={setIsEnter} />
+        <Onboarding setActiveTab={setActiveTab} />
       ) : (
         <div className={styles.loginPage__main}>
           <img className={styles.loginPage__logo} src={logoImg} alt="" />
           <h1 className={styles.loginPage__title}>Привет, Гость!</h1>
-          <nav className={styles.loginPage__nav}>
-            <button
-              className={`${styles.loginPage__button} ${
-                isEnter === true && styles.loginPage__button_active
-              }`}
-              onClick={() => {
-                if (isEnter === false) setIsEnter(true);
-              }}
-            >
-              Вход
-            </button>
-            <button
-              className={`${styles.loginPage__button} ${
-                isEnter === false && styles.loginPage__button_active
-              }`}
-              onClick={() => {
-                if (isEnter === true) setIsEnter(false);
-              }}
-            >
-              Регистрация
-            </button>
-          </nav>
+          <Navtab
+            tabsList={[
+              { nameRU: 'Вход', nameState: 'enter' },
+              { nameRU: 'Регистрация', nameState: 'registration' },
+            ]}
+            setState={setActiveTab}
+            state={activeTab}
+          />
           <form
             className={styles.loginPage__form}
             onSubmit={
-              isEnter
+              activeTab === 'enter'
                 ? handleSubmit(onSubmitLogin)
                 : handleSubmit(onSubmitRegistration)
             }
@@ -135,7 +122,7 @@ export default function LoginPage() {
               <label className={styles.loginPage__label} htmlFor="password">
                 Пароль
               </label>
-              {isEnter === true && (
+              {activeTab === 'enter' && (
                 <p className={styles.loginPage__forgot}>Забыли пароль?</p>
               )}
               <input
@@ -145,13 +132,13 @@ export default function LoginPage() {
               />
             </div>
             <ActionButton
-              title={isEnter ? 'Вход' : 'Регистрация'}
+              title={activeTab === 'enter' ? 'Вход' : 'Регистрация'}
               type="submit"
             />
             <p className={styles.notificationPersonalData}>
-              При {isEnter ? 'входе' : 'регистрации'} вы соглашаетесь на
-              обработку, хранение и передачу персональных данных в рамках
-              реализации всех этапов КАРДО
+              При {activeTab === 'enter' ? 'входе' : 'регистрации'} вы
+              соглашаетесь на обработку, хранение и передачу персональных данных
+              в рамках реализации всех этапов КАРДО
             </p>
           </form>
           <button

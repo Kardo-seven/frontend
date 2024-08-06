@@ -1,25 +1,8 @@
-/* .backTo {
-  background-color: var(--light-neutrals-200);
-  width: 343px;
-  padding: 12px 0px 12px 16px;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: space-between;
-}
-
-.backTo__button {
-  display: flex;
+.backTo {
   background-color: transparent;
+  width: 48px;
+  height: 48px;
   border: none;
-  cursor: pointer;
   padding: 0;
 }
 
-.backTo__header {
-margin: 0 0 0 8px;
-padding: 0;
-font-size: 14px;
-font-weight: 400;
-line-height: 20px;
-color: var(--light-type-high)
-} */

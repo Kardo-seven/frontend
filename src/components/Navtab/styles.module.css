@@ -1,0 +1,31 @@
+.nav {
+  width: 343px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav__button {
+  height: 48px;
+  color: var(--Base-White);
+  border: none;
+  border-bottom: 1px solid var(--Shade-Gray-Dark);
+  background-color: transparent;
+  padding: 0px 16px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 120%;
+  transition: all 0.3s ease;
+}
+
+.nav__button_length_2 {
+  width: 50%;
+}
+
+.nav__button_length_3 {
+  width: 33%;
+}
+
+.nav__button_active {
+  color: var(--Base-Carrot);
+  border-bottom: 1px solid var(--Base-Carrot);
+}

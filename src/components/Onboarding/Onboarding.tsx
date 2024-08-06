@@ -15,9 +15,9 @@ import slide4 from '../../assets/images/onboarding/slide4.jpg';
 import { useActions } from '../../hooks/actions';
 
 export default function OnBoarding({
-  setIsEnter,
+  setActiveTab,
 }: {
-  setIsEnter: (isEnter: boolean) => void;
+  setActiveTab: (activeTab: string) => void;
 }) {
   const [isLastSlide, setIsLastSlide] = useState(false);
   const { setIsOnboardingOpen } = useActions();
@@ -33,7 +33,7 @@ export default function OnBoarding({
           if (!isLastSlide) swiper.slideNext();
           else {
             setIsOnboardingOpen(false);
-            setIsEnter(false);
+            setActiveTab('registration');
           }
         }}
       >
@@ -129,7 +129,7 @@ export default function OnBoarding({
             <button
               onClick={() => {
                 setIsOnboardingOpen(false);
-                setIsEnter(true);
+                setActiveTab('enter');
               }}
               className={styles.slide__loginButton}
             >
