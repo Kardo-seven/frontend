@@ -5,10 +5,82 @@
 }
 
 .mainPage {
-  font-size: 25px;
+  margin: 0 auto;
+  margin-top: 48px;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  width: var(--max-desktop-width);
+  flex-direction: column;
+  width: 91%;
+}
+
+.coverBackground{
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  position: relative;
+  text-decoration: none;
+  width: 100%;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  min-height: 242px;
+  border: solid 2px;
+  border-color: #FF4310;
+  margin-bottom: 16px;
+}
+
+.coverBackground:before {
+  content: " ";
+  background-color: #2A2C2F;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.3;
+  transition: opacity 0.7s;
+}
+
+.coverBackground:last-child {
+  margin-bottom: 48px;
+}
+.coverBackground:hover:before{
+  opacity: 0.8;
+}
+
+.coverBackgroundContests{
+  background-image: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(../../assets/images/events/competitionMenu.png);
+}
+
+.coverBackgroundPrize{
+  background-image: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(../../assets/images/events/prizeMenu.png);
+}
+
+.coverBackgroundProjects{
+  background-image: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(../../assets/images/events/projectsMenu.png);
+}
+
+.coverBackgroundVideoContest{
+  background-image: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(../../assets/images/events/videoContestsMenu.png);
+}
+
+.coverBackgroundChildren{
+  background-image: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(../../assets/images/events/childrenMenu.png);
+}
+
+.coverBackgroundGrand{
+  background-image: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(../../assets/images/events/grandFinalMenu.png);
+}
+
+.coverTitle{
+  display: flex;
+  justify-content: center;
+  text-align:justify;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 38.4px;
+  width: 100%;
+  color: white;
+  z-index: 1;
+  margin: 0;
+  font-style: normal;
 }
