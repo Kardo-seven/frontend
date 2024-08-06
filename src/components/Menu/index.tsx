@@ -6,12 +6,17 @@ import documents from '../../assets/images/menu/article.svg';
 import resources from '../../assets/images/menu/resourses.svg';
 import rating from '../../assets/images/menu/award_star.svg';
 import logout from '../../assets/images/menu/logout.svg';
+import { useNavigate } from 'react-router-dom';
 
 export default function Menu({ isMenuOpen }: { isMenuOpen: boolean }) {
+
+const navigate = useNavigate();
+
   return (
     <ul className={`${styles.menu} ${isMenuOpen ? styles.menu_active : ''}`}>
       <nav className={styles.menu__nav}>
-        <li className={styles.menu__item}>
+        <li className={styles.menu__item}
+        onClick={() => navigate('edit-profile-info')}>
           <img src={personalInfo} alt="" />
           <span className={styles.menu__text}>Личная информация</span>
         </li>
