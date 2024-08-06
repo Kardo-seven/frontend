@@ -12,6 +12,7 @@ import {
   DirectionsPage,
   ProfilePage,
   ContentPage,
+  EditProfilePage,
   ContestsPage
 } from './components';
 
@@ -24,15 +25,18 @@ const router = createBrowserRouter(
       <Route path="/" element={<Layout />} errorElement={<NotFoundPage />}>
         <Route element={<ProtectedRoute />}>
           <Route path="profile" element={<ProfilePage />} />
+          <Route
+            path="profile/edit-profile-info"
+            element={<EditProfilePage />}
+          />
         </Route>
         <Route path="content" element={<ContentPage />} />
         <Route path="login" element={<LoginPage />} />
         <Route path="main" element={<MainPage />} />
         <Route path="directions" element={<DirectionsPage />} />
         <Route path="events" element={<EventsPage />} />
-        <Route path="contests" element={<ContestsPage />} />
-        
-        
+         <Route path="contests" element={<ContestsPage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Route>
     </>
   ),
