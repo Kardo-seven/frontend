@@ -31,7 +31,7 @@ export default function EditProfilePage() {
   const [activeTab, setActiveTab] = useState('personal-data');
   const {
     register,
-    handleSubmit,
+    // handleSubmit,
     // formState: { errors },
   } = useForm<Inputs>();
   const options = [
