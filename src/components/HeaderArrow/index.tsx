@@ -1,5 +1,4 @@
 import BackTo from '../BackTo';
-import MenuButton from '../MenuButton';
 import styles from './styles.module.css';
 
 export default function HeaderArrow({ title }: { title: string }) {
