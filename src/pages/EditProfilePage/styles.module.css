@@ -5,10 +5,59 @@
 }
 
 .mainPage {
-  font-size: 25px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  height: 100vh;
   width: var(--max-desktop-width);
+}
+
+.editProfile__form {
+  margin-top: 40px;
+}
+
+.editProfile__inputFields {
+  width: 343px;
+  display: flex;
+  justify-content: space-between;
+}
+.editProfile__inputField {
+  position: relative;
+  width: 163px;
+}
+
+.editProfile__inputField_type_big {
+  width: 343px;
+  margin-bottom: 40px;
+}
+
+.editProfile__label {
+  position: absolute;
+  left: 0;
+  top: -24px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 150%;
+  color: var(--Shade-Gray-Dark);
+}
+.editProfile__input {
+  width: 100%;
+  height: 46px;
+  background-color: transparent;
+  border: 2px solid var(--Base-White);
+  padding: 10px;
+  box-sizing: border-box;
+  color: var(--Base-White);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 150%;
+  text-overflow: ellipsis;
+  border-radius: 4px;
+}
+.editProfile__description {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 120%;
+  color: var(--Shade-Gray-Dark);
+  padding: 0;
+  margin: 8px 0 40px 0;
 }
