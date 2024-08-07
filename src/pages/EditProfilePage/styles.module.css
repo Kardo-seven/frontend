@@ -61,3 +61,11 @@
   padding: 0;
   margin: 8px 0 40px 0;
 }
+.editProfile__addButton {
+  width: 126px;
+  margin-bottom: 28px;
+}
+
+.editProfile__submitButton {
+  margin-bottom: 146px;
+}
