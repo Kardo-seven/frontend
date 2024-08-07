@@ -19,15 +19,16 @@ import AchieveModal from '../../components/AchieveModal';
 import { useState } from 'react';
 import EditAvatar from '../../components/EditAvatar';
 import Menu from '../../components/Menu';
-// import { useLazyGetMyProfileQuery } from '../../store/kardo/kardo.api';
-// import { useEffect } from 'react';
+import { useLazyGetMyProfileQuery } from '../../store/kardo/kardo.api';
+import { useEffect } from 'react';
 
 export default function ProfilePage() {
-  // const [triggerMyProfile, { data: profile }] = useLazyGetMyProfileQuery();
-  // useEffect(() => {
-  //   triggerMyProfile();
-  //   console.log(profile);
-  // }, );
+  const [triggerMyProfile, { data: profile }] = useLazyGetMyProfileQuery();
+  useEffect(() => {
+    triggerMyProfile();
+    console.log(profile);
+  }, [profile]);
+
 
   const [openEditAvatar, setOpenEditAvatar] = useState(false);
   const [openAchieveInfo, setOpenAchieveInfo] = useState(false);

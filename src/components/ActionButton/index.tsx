@@ -5,22 +5,40 @@ export default function ActionButton({
   size,
   secondary,
   type,
+  color,
+  download,
 }: {
   title: string;
   size?: string;
   secondary?: boolean;
-  type?: "button" | "submit" | "reset";
+  type?: 'button' | 'submit' | 'reset';
+  color?: string;
+  download?: boolean;
 }) {
   return (
-    <button
-      className={`${styles.actionButton} ${
-        size === 's' ? `${styles.actionButton_size_s}` : ''
-      } ${size === 'm' ? `${styles.actionButton_size_m}` : ''} ${
-        size === 'xs' ? `${styles.actionButton_size_xs}` : ''
-      } ${secondary ? `${styles.actionButton_secondary}` : ''}`}
-      type={type ? type : 'button'}
-    >
-      {title}
-    </button>
+    <div className={styles.actionButtonContainer}>
+      {!download ? (
+        <button
+          className={`${styles.actionButton} ${
+            size === 's' ? `${styles.actionButton_size_s}` : ''
+          } ${color === 'black' ? `${styles.actionButton_color_black}` : ''} ${
+            secondary ? `${styles.actionButton_secondary}` : ''
+          }`}
+          type={type ? type : 'button'}
+        >
+          {title}
+        </button>
+      ) : (
+        <div className={styles.actionButtonDownload}>
+          <label
+            className={`${styles.actionButton} ${styles.actionButton_download}`}
+            htmlFor="download"
+          >
+            {title}
+          </label>
+          <input type="file" name="download" id="download" />
+        </div>
+      )}
+    </div>
   );
 }
