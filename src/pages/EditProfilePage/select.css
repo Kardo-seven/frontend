@@ -15,4 +15,12 @@
 .editProfile__menu {
   background-color: var(--Base-White);
   color: var(--Base-Black);
+  border-radius: 4px;
+}
+
+.editProfile__option {
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 150%;
 }

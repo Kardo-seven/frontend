@@ -10,6 +10,7 @@ import Navtab from '../../components/Navtab';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import Select from 'react-select';
+import ActionButton from '../../components/ActionButton/index';
 
 type Inputs = {
   name: string;
@@ -113,6 +114,7 @@ export default function EditProfilePage() {
                 control: () => 'editProfile__control',
                 container: () => 'editProfile__select-container',
                 menu: () => 'editProfile__menu',
+                option: () => 'editProfile__option',
               }}
             />
             <div
@@ -165,6 +167,27 @@ export default function EditProfilePage() {
                 type="text"
                 {...register('citizenship', { required: true })}
               />
+            </div>
+            <div
+              className={`${styles.editProfile__inputField} ${styles.editProfile__inputField_type_big}`}
+            >
+              <label
+                className={styles.editProfile__label}
+                htmlFor="citizenship"
+              >
+                Ссылка на соц. сеть
+              </label>
+              <input
+                className={styles.editProfile__input}
+                type="text"
+                {...register('citizenship', { required: true })}
+              />
+            </div>
+            <div className={styles.editProfile__addButton}>
+              <ActionButton title="Добавить" secondary size="s" />
+            </div>
+            <div className={styles.editProfile__submitButton}>
+              <ActionButton title="Сохранить" type="submit" />
             </div>
           </form>
         )}

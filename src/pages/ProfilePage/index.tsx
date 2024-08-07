@@ -7,7 +7,7 @@ import styles from './styles.module.css';
 import Navbar from '../../components/Navbar';
 import ActionButton from '../../components/ActionButton';
 import HeaderProfile from '../../components/HeaderProfile';
-import avatar from '../../assets/images/profile/Avatar.jpg';
+import avatar from '../../assets/images/profile/Avatar.png';
 import winner from '../../assets/images/profile/winner.png';
 import prize from '../../assets/images/profile/prize.png';
 import event from '../../assets/images/profile/event.png';
