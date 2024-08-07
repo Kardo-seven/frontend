@@ -1,10 +1,9 @@
 .navbar {
   height: 56px;
   width: 375px;
-  color: aqua;
   padding: 16px 32px 32px;
   box-sizing: border-box;
-  background-color:  aqua;
+  background-color: var(--Base-Black);
 }
 
 .navList {
