@@ -1,3 +1,7 @@
+.actionButtonContainer {
+  width: 100%;
+}
+
 .actionButton {
   color: var(--Base-White);
   width: 100%;
@@ -24,7 +28,22 @@
   height: 40px;
 }
 
+.actionButton_color_black {
+  color: var(--Base-Black);
+}
+
 .actionButton_secondary {
   border: 1px solid var(--Base-Carrot);
   background-color: transparent;
+}
+
+
+.actionButtonDownload {
+  margin-bottom: 25px;
+}
+
+.actionButton_download {
+  position: absolute;
+  width: 311px;
+  text-align: center;
 }

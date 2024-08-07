@@ -25,6 +25,10 @@
   width: 33%;
 }
 
+.nav__button_length_4 {
+  width: 25%;
+}
+
 .nav__button_active {
   color: var(--Base-Carrot);
   border-bottom: 1px solid var(--Base-Carrot);
