@@ -28,4 +28,5 @@ type UserPersonalData = {
   phone: string;
   email: string;
   password: string;
+  newPassword?: string;
 };
