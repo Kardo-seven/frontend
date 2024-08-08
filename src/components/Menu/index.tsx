@@ -7,16 +7,19 @@ import resources from '../../assets/images/menu/resourses.svg';
 import rating from '../../assets/images/menu/award_star.svg';
 import logout from '../../assets/images/menu/logout.svg';
 import { useNavigate } from 'react-router-dom';
+import { useActions } from '../../hooks/actions';
 
 export default function Menu({ isMenuOpen }: { isMenuOpen: boolean }) {
-
-const navigate = useNavigate();
+  const navigate = useNavigate();
+    const { setLoggedIn } = useActions();
 
   return (
     <ul className={`${styles.menu} ${isMenuOpen ? styles.menu_active : ''}`}>
       <nav className={styles.menu__nav}>
-        <li className={styles.menu__item}
-        onClick={() => navigate('edit-profile-info')}>
+        <li
+          className={styles.menu__item}
+          onClick={() => navigate('edit-profile-info')}
+        >
           <img src={personalInfo} alt="" />
           <span className={styles.menu__text}>Личная информация</span>
         </li>
@@ -41,7 +44,13 @@ const navigate = useNavigate();
           <span className={styles.menu__text}>Оценка номинантов</span>
         </li>
       </nav>
-      <li className={styles.menu__item}>
+      <li
+        className={styles.menu__item}
+        onClick={() => {
+          localStorage.removeItem('authToken');
+          setLoggedIn(false);
+        }}
+      >
         <img src={logout} alt="" />
         <span className={styles.menu__text}>Выйти из аккаунта</span>
       </li>

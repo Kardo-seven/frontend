@@ -122,3 +122,18 @@
   padding: 0;
   margin-bottom: 46px;
 }
+
+.loginPage__submitButton {
+  margin-top: 24px;
+  width: 343px;
+}
+
+.loginPage__showPasswordButton {
+  position: absolute;
+  top: 28px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+}

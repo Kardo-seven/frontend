@@ -14,7 +14,9 @@ import {
 } from '../../store/kardo/kardo.api';
 import { useForm } from 'react-hook-form';
 import { useAppSelector } from '../../hooks/redux';
-import Navtab from '../../components/Navtab'
+import Navtab from '../../components/Navtab';
+import visible from '../../assets/images/login/visibility.svg';
+import hidden from '../../assets/images/login/visibility_off.svg';
 
 type Inputs = {
   email: string;
@@ -31,6 +33,7 @@ export default function LoginPage() {
   const isOnboardingOpen = useAppSelector(
     (state) => state.onboarding.isLOnboardingOpen
   );
+  const [showPassword, setShowPassword] = useState(false);
 
   // const auth = async () => {
   //   try {
@@ -127,14 +130,22 @@ export default function LoginPage() {
               )}
               <input
                 className={styles.loginPage__input}
-                type="password"
+                type={showPassword ? 'text' : 'password'}
                 {...register('password', { required: true })}
               />
+              <button className={styles.loginPage__showPasswordButton}onClick={() => setShowPassword(!showPassword)}>
+                <img
+                  src={showPassword ? visible : hidden}
+                  alt="кнопка показывать пароль"
+                />
+              </button>
             </div>
-            <ActionButton
-              title={activeTab === 'enter' ? 'Вход' : 'Регистрация'}
-              type="submit"
-            />
+            <div className={styles.loginPage__submitButton}>
+              <ActionButton
+                title={activeTab === 'enter' ? 'Вход' : 'Регистрация'}
+                type="submit"
+              />
+            </div>
             <p className={styles.notificationPersonalData}>
               При {activeTab === 'enter' ? 'входе' : 'регистрации'} вы
               соглашаетесь на обработку, хранение и передачу персональных данных

@@ -69,3 +69,44 @@
 .editProfile__submitButton {
   margin-bottom: 146px;
 }
+
+.editProfile__genderField {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+  margin-top: 16px;
+  margin-bottom: 48px;
+}
+.editProfile__descriptionGender {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 120%;
+  margin: 0;
+  padding: 0;
+}
+.editProfile__radioVariant {
+}
+.editProfile__radioInput {
+opacity: 0;
+}
+.editProfile__radioLabel {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 120%;
+  position: relative;
+  padding-left: 20px;
+}
+
+.editProfile__radioLabel::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -12px;
+  background-image: url('../../assets/images/system/radio_button_unchecked.svg');
+  width: 20px;
+  height: 20px;
+}
+
+.editProfile__radioInput:checked + .editProfile__radioLabel::before {
+  background-image: url('../../assets/images/system/radio_button_checked.svg');
+}

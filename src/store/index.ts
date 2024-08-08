@@ -4,6 +4,7 @@ import { authReducer } from './kardo/auth.slice';
 import { onboardingReducer } from './kardo/onboarding.slice';
 import { modalReducer } from './kardo/modal.slice';
 import { popupReducer } from './kardo/popup.slice';
+import { currentUserReducer } from './kardo/profile.slice';
 
 export const store = configureStore({
   reducer: {
@@ -12,6 +13,7 @@ export const store = configureStore({
     onboarding: onboardingReducer,
     modal: modalReducer,
     popup: popupReducer,
+    user: currentUserReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(api.middleware),
