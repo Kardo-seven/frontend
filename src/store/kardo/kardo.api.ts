@@ -58,8 +58,24 @@ export const api = createApi({
       query: () => ({
         url: 'user/profile',
       }),
+      providesTags: ['User'],
+    }),
+    postAvatar: build.mutation<void, FormData>({
+      query: (formData) => ({
+        url: 'user/avatar/upload',
+        method: 'POST',
+        body: formData,
+      }),
+    }),
+    patchPersonalData: build.mutation<UserPersonalData, UserPersonalData>({
+      query: (formData) => ({
+        url: `user/personal-information/update`,
+        method: 'PATCH',
+        body: formData,
+      }),
+      invalidatesTags: ['User'],
     }),
   }),
 });
 
-export const { useLoginMutation, useRegistrationMutation, useLazyGetMyProfileQuery } = api;
+export const { useLoginMutation, useRegistrationMutation, useLazyGetMyProfileQuery, usePostAvatarMutation, usePatchPersonalDataMutation } = api;
