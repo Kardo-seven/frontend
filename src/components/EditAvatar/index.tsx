@@ -2,10 +2,10 @@ import styles from './styles.module.css';
 import avatar from '../../assets/images/profile/Avatar.png';
 import ActionButton from '../ActionButton';
 import { useForm } from 'react-hook-form';
-import { usePostAvatarMutation } from '../../store/kardo/kardo.api';
+// import { usePostAvatarMutation } from '../../store/kardo/kardo.api';
 
 export default function EditAvatar() {
-  const [postAvatar] = usePostAvatarMutation();
+  // const [postAvatar] = usePostAvatarMutation();
     const {
     register,
     handleSubmit,
