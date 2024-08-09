@@ -31,9 +31,9 @@ type UserPersonalData = {
   newPassword?: string;
 };
 
-type Document = {
+type DocumentData = {
   documentId: number;
-  title: 'string';
-  type: 'string';
-  link: 'string';
+  link: string;
+  title: string;
+  type: string;
 };

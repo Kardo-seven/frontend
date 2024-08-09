@@ -75,7 +75,7 @@ export const api = createApi({
       }),
       invalidatesTags: ['User'],
     }),
-    getDocuments: build.query<Document[], void>({
+    getDocuments: build.query<DocumentData[], void>({
       query: () => ({
         url: 'about/documents',
       }),
