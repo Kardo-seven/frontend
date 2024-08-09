@@ -14,7 +14,8 @@ import {
   ContentPage,
   EditProfilePage,
   SettingsAccountPage,
-  DocumentsPage
+  DocumentsPage,
+  ContestsPage,
 } from './components';
 
 import Layout from '../components/Layout';
