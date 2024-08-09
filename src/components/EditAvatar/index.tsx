@@ -6,15 +6,15 @@ import { useForm } from 'react-hook-form';
 
 export default function EditAvatar() {
   // const [postAvatar] = usePostAvatarMutation();
-    const {
+  const {
     register,
     handleSubmit,
     // formState: { errors },
   } = useForm();
 
   const onSubmit = async (data: any) => {
-console.log(data.download[0]);
-  }
+    console.log(data.download[0]);
+  };
 
   return (
     <div className={styles.popupContent}>

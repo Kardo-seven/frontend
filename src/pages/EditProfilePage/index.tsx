@@ -54,7 +54,7 @@ export default function EditProfilePage() {
                   className={styles.editProfile__input}
                   type="text"
                   defaultValue={myProfile?.name}
-                  {...register('name', { required: true })}
+                  {...register('name')}
                 />
               </div>
               <div className={styles.editProfile__inputField}>
@@ -65,7 +65,7 @@ export default function EditProfilePage() {
                   className={styles.editProfile__input}
                   type="text"
                   defaultValue={myProfile?.lastName}
-                  {...register('lastName', { required: true })}
+                  {...register('lastName')}
                 />
               </div>
             </div>
@@ -81,7 +81,7 @@ export default function EditProfilePage() {
                   className={styles.editProfile__input}
                   type="text"
                   defaultValue={myProfile?.surName}
-                  {...register('surName', { required: true })}
+                  {...register('surName')}
                 />
               </div>
               <div className={styles.editProfile__inputField}>
@@ -92,7 +92,7 @@ export default function EditProfilePage() {
                   className={styles.editProfile__input}
                   type="date"
                   defaultValue={myProfile?.birthday}
-                  {...register('birthday', { required: true })}
+                  {...register('birthday')}
                 />
               </div>
             </div>
@@ -100,27 +100,27 @@ export default function EditProfilePage() {
               <p className={styles.editProfile__descriptionGender}>
                 Выберите пол
               </p>
-              <div className={styles.editProfile__radioVariant}>
+              <div>
                 <input
                   className={styles.editProfile__radioInput}
                   type="radio"
                   id="man"
                   {...register('gender')}
                   value="MAN"
-                  checked={myProfile?.gender === 'MAN'}
+                  defaultChecked={myProfile?.gender === 'MAN'}
                 />
                 <label className={styles.editProfile__radioLabel} htmlFor="man">
                   Мужской
                 </label>
               </div>
-              <div className={styles.editProfile__radioVariant}>
+              <div>
                 <input
                   className={styles.editProfile__radioInput}
                   type="radio"
                   id="woman"
                   {...register('gender')}
                   value="WOMAN"
-                  checked={myProfile?.gender === 'WOMAN'}
+                  defaultChecked={myProfile?.gender === 'WOMAN'}
                 />
                 <label
                   className={styles.editProfile__radioLabel}
@@ -140,7 +140,7 @@ export default function EditProfilePage() {
                 className={styles.editProfile__input}
                 type="text"
                 defaultValue={myProfile?.country}
-                {...register('country', { required: true })}
+                {...register('country')}
               />
             </div>
             <div
@@ -153,7 +153,7 @@ export default function EditProfilePage() {
                 className={styles.editProfile__input}
                 type="text"
                 defaultValue={myProfile?.region}
-                {...register('region', { required: true })}
+                {...register('region')}
               />
             </div>
             <div
@@ -166,7 +166,7 @@ export default function EditProfilePage() {
                 className={styles.editProfile__input}
                 type="text"
                 defaultValue={myProfile?.city}
-                {...register('city', { required: true })}
+                {...register('city')}
               />
             </div>
             <div
@@ -182,7 +182,7 @@ export default function EditProfilePage() {
                 className={styles.editProfile__input}
                 type="text"
                 defaultValue={myProfile?.citizenship}
-                {...register('citizenship', { required: true })}
+                {...register('citizenship')}
               />
             </div>
             <div
@@ -194,7 +194,7 @@ export default function EditProfilePage() {
               <input
                 className={styles.editProfile__input}
                 type="text"
-                {...register('socialLink', { required: true })}
+                {...register('socialLink')}
               />
             </div>
             <div className={styles.editProfile__addButton}>
@@ -206,7 +206,7 @@ export default function EditProfilePage() {
           </form>
         )}
         {activeTab === 'enter-data' && (
-          <form>
+          <form className={styles.editProfile__form}>
             <div
               className={`${styles.editProfile__inputField} ${styles.editProfile__inputField_type_big}`}
             >
@@ -216,9 +216,11 @@ export default function EditProfilePage() {
               <input
                 className={styles.editProfile__input}
                 type="text"
-                {...register('phone', { required: true })}
+                {...register('phone')}
               />
-              <button>Изменить номер телефона</button>
+              <button className={styles.editProfile__changeInputButton}>
+                Изменить номер телефона
+              </button>
             </div>
             <div
               className={`${styles.editProfile__inputField} ${styles.editProfile__inputField_type_big}`}
@@ -229,11 +231,13 @@ export default function EditProfilePage() {
               <input
                 className={styles.editProfile__input}
                 type="text"
-                {...register('email', { required: true })}
+                {...register('email')}
               />
-              <button>Изменить почтовый адрес</button>
+              <button className={styles.editProfile__changeInputButton}>
+                Изменить почтовый адрес
+              </button>
             </div>
-            <h2>Изменить пароль</h2>
+            <h2 className={styles.editProfile__titleDescription}>Изменить пароль</h2>
             <div
               className={`${styles.editProfile__inputField} ${styles.editProfile__inputField_type_big}`}
             >
@@ -243,7 +247,7 @@ export default function EditProfilePage() {
               <input
                 className={styles.editProfile__input}
                 type="password"
-                {...register('password', { required: true })}
+                {...register('password')}
               />
             </div>
             <div
@@ -258,7 +262,7 @@ export default function EditProfilePage() {
               <input
                 className={styles.editProfile__input}
                 type="password"
-                {...register('newPassword', { required: true })}
+                {...register('newPassword')}
               />
             </div>
             <div
@@ -273,8 +277,11 @@ export default function EditProfilePage() {
               <input
                 className={styles.editProfile__input}
                 type="password"
-                {...register('newPassword', { required: true })}
+                {...register('newPassword')}
               />
+            </div>
+            <div className={styles.editProfile__submitButton}>
+              <ActionButton title="Сохранить" />
             </div>
           </form>
         )}

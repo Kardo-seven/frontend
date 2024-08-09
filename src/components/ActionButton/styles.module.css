@@ -37,6 +37,11 @@
   background-color: transparent;
 }
 
+.actionButton_doubleSecondary {
+  border: 2px solid var(--Base-White);
+  background-color: transparent;
+}
+
 
 .actionButtonDownload {
   margin-bottom: 25px;

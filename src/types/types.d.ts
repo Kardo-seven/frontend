@@ -30,3 +30,10 @@ type UserPersonalData = {
   password: string;
   newPassword?: string;
 };
+
+type Document = {
+  documentId: number;
+  title: 'string';
+  type: 'string';
+  link: 'string';
+};

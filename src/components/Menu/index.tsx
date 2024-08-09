@@ -9,9 +9,15 @@ import logout from '../../assets/images/menu/logout.svg';
 import { useNavigate } from 'react-router-dom';
 import { useActions } from '../../hooks/actions';
 
-export default function Menu({ isMenuOpen }: { isMenuOpen: boolean }) {
+export default function Menu({
+  isMenuOpen,
+  setOpenGetOut,
+}: {
+  isMenuOpen: boolean;
+  setOpenGetOut: (openGetOut: boolean) => void;
+}) {
   const navigate = useNavigate();
-    const { setLoggedIn } = useActions();
+  const { openPopup } = useActions();
 
   return (
     <ul className={`${styles.menu} ${isMenuOpen ? styles.menu_active : ''}`}>
@@ -23,7 +29,9 @@ export default function Menu({ isMenuOpen }: { isMenuOpen: boolean }) {
           <img src={personalInfo} alt="" />
           <span className={styles.menu__text}>Личная информация</span>
         </li>
-        <li className={styles.menu__item}>
+        <li className={styles.menu__item}
+        onClick={() => navigate('settings')}
+        >
           <img src={settings} alt="" />
           <span className={styles.menu__text}>Настройки аккаунта</span>
         </li>
@@ -31,7 +39,7 @@ export default function Menu({ isMenuOpen }: { isMenuOpen: boolean }) {
           <img src={notifications} alt="" />
           <span className={styles.menu__text}>Уведомления</span>
         </li>
-        <li className={styles.menu__item}>
+        <li onClick={() => navigate('/documents')} className={styles.menu__item}>
           <img src={documents} alt="" />
           <span className={styles.menu__text}>Документы</span>
         </li>
@@ -47,8 +55,8 @@ export default function Menu({ isMenuOpen }: { isMenuOpen: boolean }) {
       <li
         className={styles.menu__item}
         onClick={() => {
-          localStorage.removeItem('authToken');
-          setLoggedIn(false);
+          setOpenGetOut(true);
+          openPopup();
         }}
       >
         <img src={logout} alt="" />

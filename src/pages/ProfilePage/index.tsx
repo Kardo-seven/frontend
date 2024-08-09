@@ -22,6 +22,8 @@ import Menu from '../../components/Menu';
 import { useLazyGetMyProfileQuery } from '../../store/kardo/kardo.api';
 import { useEffect } from 'react';
 import { useAppSelector } from '../../hooks/redux';
+import ExitConfirm from '../../components/ExitConfirm';
+import Navtab from '../../components/Navtab';
 
 export default function ProfilePage() {
   const [triggerMyProfile, { data: profile }] = useLazyGetMyProfileQuery();
@@ -36,7 +38,9 @@ export default function ProfilePage() {
 
   const [openEditAvatar, setOpenEditAvatar] = useState(false);
   const [openAchieveInfo, setOpenAchieveInfo] = useState(false);
+  const [openGetOut, setOpenGetOut] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState('feed');
 
   return (
     <section className={styles.section}>
@@ -45,20 +49,19 @@ export default function ProfilePage() {
         {myProfile && (
           <div className={styles.mainPage__content}>
             <div className={styles.mainPage__profileInfo}>
-              <div className={styles.mainPage__avatarAndName}>
-                <img
-                  className={styles.mainPage__avatar}
-                  src={avatar}
-                  alt="аватар"
-                  onClick={() => {
-                    setOpenEditAvatar(true);
-                    openPopup();
-                  }}
-                />
-                <h2 className={styles.mainPage__name}>
-                  {myProfile.name} {myProfile.lastName}
-                </h2>
-              </div>
+              <img
+                className={styles.mainPage__avatar}
+                src={avatar}
+                alt="аватар"
+                onClick={() => {
+                  setOpenEditAvatar(true);
+                  openPopup();
+                }}
+              />
+              <h2 className={styles.mainPage__name}>
+                {myProfile.name ? myProfile.name : 'Имя'}{' '}
+                {myProfile.lastName ? myProfile.lastName : 'Фамилия'}
+              </h2>
               <ul className={styles.mainPage__profileDataList}>
                 <li className={styles.mainPage__profileDataItem}>
                   <p className={styles.mainPage__profileDataText}>Публикации</p>
@@ -120,11 +123,22 @@ export default function ProfilePage() {
                 </li>
               </ul>
             </div>
-            <ul>
-              <li>Публикация</li>
-              <li>Публикация</li>
-              <li>Публикация</li>
-            </ul>
+            <Navtab
+              tabsList={[
+                { nameRU: 'Лента', nameState: 'feed' },
+                { nameRU: 'Запись на конкурс', nameState: 'registration' },
+              ]}
+              setState={setActiveTab}
+              state={activeTab}
+            />
+            {activeTab === 'feed' && (
+              <ul>
+                <li>Публикация</li>
+                <li>Публикация</li>
+                <li>Публикация</li>
+              </ul>
+            )}
+            {activeTab === 'registration' && <div>Запись на конкурс</div>}
           </div>
         )}
       </div>
@@ -139,7 +153,12 @@ export default function ProfilePage() {
         <Popup content={<EditAvatar />} setOpenEditAvatar={setOpenEditAvatar} />
       )}
       <Modal content={<AchieveModal />} />
-      {isMenuOpen && <Menu isMenuOpen={isMenuOpen} />}
+      {isMenuOpen && (
+        <Menu isMenuOpen={isMenuOpen} setOpenGetOut={setOpenGetOut} />
+      )}
+      {openGetOut && (
+        <Popup content={<ExitConfirm setOpenGetOut={setOpenGetOut} />} />
+      )}
     </section>
   );
 }

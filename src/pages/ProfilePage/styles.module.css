@@ -19,31 +19,33 @@
 }
 
 .mainPage__profileInfo {
-  display: flex;
+  display: grid;
+  grid-template-columns: 80px 234px;
+  grid-template-rows: 80px;
   justify-content: space-between;
   width: 343px;
   margin: 0 auto 28px;
-}
-
-.mainPage__avatarAndName {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  row-gap: 8px;
 }
 
 .mainPage__avatar {
+  grid-column: 1;
+  grid-row: 1;
   width: 80px;
   height: 80px;
   border-radius: 50%;
 }
 
 .mainPage__name {
+  width: max-content;
+  grid-column: 1/2;
+  grid-row: 2;
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
   line-height: 120%;
-  margin-bottom: 0;
-  margin-top: 8px;
+  margin: 0;
+  padding: 0;
 }
 
 .mainPage__profileDataList {
@@ -84,6 +86,7 @@
   display: grid;
   grid-template-columns: 2;
   grid-template-rows: 2;
+  margin-bottom: 28px;
 }
 
 .mainPage__achievementHeader {
@@ -122,7 +125,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  
 }
 
 .mainPage__achievementCaption {
