@@ -1,5 +1,5 @@
 // import { useAppSelector } from '../../hooks/redux';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useLazyGetDocumentsQuery } from '../../store/kardo/kardo.api';
 import styles from './styles.module.css';
 import imgPDF from '../../assets/images/system/PDFimg.png'
@@ -12,28 +12,28 @@ import HeaderArrow from '../../components/HeaderArrow';
 export default function DocumentsPage() {
 
   const [triggerdocuments, {data: documents}] = useLazyGetDocumentsQuery();
-  const [url, setUrl] = useState('');
+  // const [url, setUrl] = useState('');
 
   useEffect(() => {
     triggerdocuments();
     console.log(documents);
   }, [documents]);
 
-  const authToken = localStorage.getItem('authToken');
+  // const authToken = localStorage.getItem('authToken');
 
-    function clickDocument(link: string) {
-      fetch(`https://kardo.zapto.org/${link}`, {
-        headers: {
-          'Content-Type': 'application/pdf',
-          Authorization: `Bearer ${authToken}`,
-        },
-      })
-        .then((res) => res.blob())
-        .then((blob) => {
-          const url = window.URL.createObjectURL(new Blob([blob]));
-          setUrl(url);
-        });
-    }
+    // function clickDocument(link: string) {
+    //   fetch(`https://kardo.zapto.org/${link}`, {
+    //     headers: {
+    //       'Content-Type': 'application/pdf',
+    //       Authorization: `Bearer ${authToken}`,
+    //     },
+    //   })
+    //     .then((res) => res.blob())
+    //     .then((blob) => {
+    //       const url = window.URL.createObjectURL(new Blob([blob]));
+    //       setUrl(url);
+    //     });
+    // }
 
   return (
     <section className={styles.section}>
@@ -49,9 +49,10 @@ export default function DocumentsPage() {
                     {doc.title}
                   </h3>
                   <a
-                    href={url}
-                    onClick={() => clickDocument(doc.link)}
-                    download={'document.pdf'}
+                    href={`https://kardo.zapto.org/${doc.link}`}
+                    target='_blank'
+                    // onClick={() => clickDocument(doc.link)}
+                    // download={'document.pdf'}
                   >
                     <button className={styles.mainPage__downloadButton}>
                       Скачать
