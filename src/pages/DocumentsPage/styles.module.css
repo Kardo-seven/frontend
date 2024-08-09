@@ -5,10 +5,43 @@
 }
 
 .mainPage {
-  font-size: 25px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   width: var(--max-desktop-width);
+}
+
+.mainPage__documentsList {
+  list-style: none;
+  padding: 0 16px 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+  min-height: 796px;
+  margin-top: 16px;
+}
+.mainPage__documentsItem {
+  width: 343px;
+  height: 114px;
+  background-color: var(--Base-White);
+  display: flex;
+}
+
+.mainPage__documentsTitle {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 120%;
+  color: var(--Base-Black);
+}
+
+.mainPage__downloadButton {
+  background-color: transparent;
+  border: none;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 120%;
+  padding: 0;
 }

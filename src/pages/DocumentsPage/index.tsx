@@ -1,8 +1,9 @@
 // import { useAppSelector } from '../../hooks/redux';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useLazyGetDocumentsQuery } from '../../store/kardo/kardo.api';
 import styles from './styles.module.css';
 import imgPDF from '../../assets/images/system/PDFimg.png'
+import HeaderArrow from '../../components/HeaderArrow';
 // import { RootState } from '../../store';
 // import { useActions } from '../../hooks/actions';
 // import { useNavigate } from 'react-router-dom';
@@ -11,20 +12,56 @@ import imgPDF from '../../assets/images/system/PDFimg.png'
 export default function DocumentsPage() {
 
   const [triggerdocuments, {data: documents}] = useLazyGetDocumentsQuery();
+  const [url, setUrl] = useState('');
 
   useEffect(() => {
     triggerdocuments();
     console.log(documents);
   }, [documents]);
 
+  const authToken = localStorage.getItem('authToken');
+
+    function clickDocument(link: string) {
+      fetch(`https://kardo.zapto.org/${link}`, {
+        headers: {
+          'Content-Type': 'application/pdf',
+          Authorization: `Bearer ${authToken}`,
+        },
+      })
+        .then((res) => res.blob())
+        .then((blob) => {
+          const url = window.URL.createObjectURL(new Blob([blob]));
+          setUrl(url);
+        });
+    }
+
   return (
     <section className={styles.section}>
+      <HeaderArrow title="Документы" />
       <main className={styles.mainPage}>
-        <ul>
-          {documents?.map((doc) => (
-            <li key={doc.title}><img src={imgPDF} alt="" />{doc.title}</li>
-          ))}
-        </ul>
+        {documents && (
+          <ul className={styles.mainPage__documentsList}>
+            {documents.map((doc) => (
+              <li className={styles.mainPage__documentsItem} key={doc.title}>
+                <img src={imgPDF} alt="" />
+                <div className="">
+                  <h3 className={styles.mainPage__documentsTitle}>
+                    {doc.title}
+                  </h3>
+                  <a
+                    href={url}
+                    onClick={() => clickDocument(doc.link)}
+                    download={'document.pdf'}
+                  >
+                    <button className={styles.mainPage__downloadButton}>
+                      Скачать
+                    </button>
+                  </a>
+                </div>
+              </li>
+            ))}
+          </ul>
+        )}
       </main>
     </section>
   );

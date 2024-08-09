@@ -2,7 +2,7 @@
 import styles from './styles.module.css';
 // import { RootState } from '../../store';
 // import { useActions } from '../../hooks/actions';
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 // import { useEffect } from 'react';
 import Navbar from '../../components/Navbar';
 import ActionButton from '../../components/ActionButton';
@@ -26,11 +26,18 @@ import ExitConfirm from '../../components/ExitConfirm';
 import Navtab from '../../components/Navtab';
 
 export default function ProfilePage() {
+  const navigate = useNavigate();
   const [triggerMyProfile, { data: profile }] = useLazyGetMyProfileQuery();
   const { openModal, openPopup, setCurrentUser } = useActions();
-  useEffect(() => {
-    triggerMyProfile();
-    setCurrentUser(profile);
+  useEffect( () => { async () => {
+        await triggerMyProfile();
+        if (profile === undefined) {
+          localStorage.removeItem('authToken');
+          navigate('/login');
+        }
+        await setCurrentUser(profile);
+  }
+
   }, [profile]);
 
   const myProfile = useAppSelector((state) => state.user.currentUser);
