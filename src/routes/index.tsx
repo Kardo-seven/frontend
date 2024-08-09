@@ -39,6 +39,7 @@ const router = createBrowserRouter(
         <Route path="main" element={<MainPage />} />
         <Route path="directions" element={<DirectionsPage />} />
         <Route path="events" element={<EventsPage />} />
+        <Route path="contests" element={<ContestsPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </>
