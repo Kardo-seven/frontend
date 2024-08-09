@@ -41,8 +41,8 @@ export default function DocumentsPage() {
       <main className={styles.mainPage}>
         {documents && (
           <ul className={styles.mainPage__documentsList}>
-            {documents.map((doc) => (
-              <li className={styles.mainPage__documentsItem} key={doc.title}>
+            {documents.map((doc: DocumentData) => (
+              <li className={styles.mainPage__documentsItem} key={doc.documentId}>
                 <img src={imgPDF} alt="" />
                 <div className="">
                   <h3 className={styles.mainPage__documentsTitle}>
