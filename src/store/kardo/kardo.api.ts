@@ -75,7 +75,12 @@ export const api = createApi({
       }),
       invalidatesTags: ['User'],
     }),
+    getDocuments: build.query<Document[], void>({
+      query: () => ({
+        url: 'about/documents',
+      }),
+    })
   }),
 });
 
-export const { useLoginMutation, useRegistrationMutation, useLazyGetMyProfileQuery, usePostAvatarMutation, usePatchPersonalDataMutation } = api;
+export const { useLoginMutation, useRegistrationMutation, useLazyGetMyProfileQuery, usePostAvatarMutation, usePatchPersonalDataMutation, useLazyGetDocumentsQuery } = api;

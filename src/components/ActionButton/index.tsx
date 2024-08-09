@@ -4,6 +4,7 @@ export default function ActionButton({
   title,
   size,
   secondary,
+  doubleSecondary,
   type,
   color,
   download,
@@ -11,6 +12,7 @@ export default function ActionButton({
   title: string;
   size?: string;
   secondary?: boolean;
+  doubleSecondary?: boolean;
   type?: 'button' | 'submit' | 'reset';
   color?: string;
   download?: boolean;
@@ -23,7 +25,7 @@ export default function ActionButton({
             size === 's' ? `${styles.actionButton_size_s}` : ''
           } ${color === 'black' ? `${styles.actionButton_color_black}` : ''} ${
             secondary ? `${styles.actionButton_secondary}` : ''
-          }`}
+          } ${doubleSecondary ? `${styles.actionButton_doubleSecondary}` : ''}`}
           type={type ? type : 'button'}
         >
           {title}

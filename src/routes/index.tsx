@@ -13,7 +13,9 @@ import {
   ProfilePage,
   ContentPage,
   EditProfilePage,
-  ContestsPage
+  SettingsAccountPage,
+  DocumentsPage,
+  ContestsPage,
 } from './components';
 
 import Layout from '../components/Layout';
@@ -29,13 +31,15 @@ const router = createBrowserRouter(
             path="profile/edit-profile-info"
             element={<EditProfilePage />}
           />
+          <Route path="profile/settings" element={<SettingsAccountPage />} />
         </Route>
         <Route path="content" element={<ContentPage />} />
+        <Route path="documents" element={<DocumentsPage />} />
         <Route path="login" element={<LoginPage />} />
         <Route path="main" element={<MainPage />} />
         <Route path="directions" element={<DirectionsPage />} />
         <Route path="events" element={<EventsPage />} />
-         <Route path="contests" element={<ContestsPage />} />
+        <Route path="contests" element={<ContestsPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </>

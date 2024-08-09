@@ -3,7 +3,7 @@
   box-sizing: border-box;
   padding: 0px;
   background-color: var(--Popup-overlay);
-  z-index: 6;
+  z-index: 7;
   display: none;
   position: fixed;
   top: 0;

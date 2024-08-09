@@ -8,6 +8,9 @@ const DirectionsPage = lazy(() => import('../pages/DirectionsPage'));
 const ProfilePage = lazy(() => import('../pages/ProfilePage'));
 const ContentPage = lazy(() => import('../pages/ContentPage'));
 const EditProfilePage = lazy(() => import('../pages/EditProfilePage'));
+const SettingsAccountPage = lazy(() => import('../pages/SettingsAccountPage'));
+const DocumentsPage = lazy(() => import('../pages/DocumentsPage'));
 const ContestsPage = lazy(() => import('../pages/ContestsPage'));
 
-export { LoginPage, NotFoundPage, MainPage, EventsPage, DirectionsPage, ProfilePage, ContentPage, EditProfilePage, ContestsPage };
+export { LoginPage, NotFoundPage, MainPage, EventsPage, DirectionsPage, ProfilePage, ContentPage, EditProfilePage, ContestsPage, SettingsAccountPage, DocumentsPage };
+

@@ -1,0 +1,10 @@
+.exitConfirm__title {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 120%;
+  padding: 0;
+  margin: 13px 0 29px 0;
+}
+.exitConfirm__button:first-of-type {
+  margin-bottom: 8px;
+}
