@@ -23,7 +23,6 @@ interface RegistrationResponse {
     }
   ];
 }
-
 export const api = createApi({
   reducerPath: 'api',
   baseQuery: fetchBaseQuery({
@@ -36,7 +35,7 @@ export const api = createApi({
       return headers;
     },
   }),
-  tagTypes: ['Auth', 'Subscription', 'User'],
+  tagTypes: ['Auth', 'Subscription', 'User', 'Event'],
   endpoints: (build) => ({
     login: build.mutation<LoginResponse, LoginRequest>({
       query: (credentials) => ({
@@ -60,6 +59,12 @@ export const api = createApi({
       }),
       providesTags: ['User'],
     }),
+    getEvents: build.query<Event[], void>({
+      query: () => ({
+        url: 'event',
+      }),
+      providesTags: ['Event'],
+    }),
     postAvatar: build.mutation<void, FormData>({
       query: (formData) => ({
         url: 'user/avatar/upload',
@@ -78,4 +83,4 @@ export const api = createApi({
   }),
 });
 
-export const { useLoginMutation, useRegistrationMutation, useLazyGetMyProfileQuery, usePostAvatarMutation, usePatchPersonalDataMutation } = api;
+export const { useLoginMutation, useRegistrationMutation, useLazyGetMyProfileQuery, usePostAvatarMutation, usePatchPersonalDataMutation, useLazyGetEventsQuery } = api;

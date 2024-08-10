@@ -7,7 +7,7 @@
   }
   .header{
     font-family: 'Rubik';
-    background-image: linear-gradient(rgba(0, 0, 0, 0.68) 20%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.85) 80%), url(../../assets/images/events/competitionMenu.png);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.68) 20%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.85) 80%), url(../../assets/images/events/prizeMenu.png);
     background-size: cover;
     background-repeat: no-repeat;
     display: block;
@@ -36,7 +36,7 @@
 
   .headerTitle{
     margin: 0;
-    margin-top: 201px;
+    margin-top: 177px;
     font-weight: 700;
     font-size: 32px;
     line-height: 38.4px;
@@ -49,6 +49,7 @@
     font-weight: 700;
     font-size: 20px;
     line-height: 24px;
+    word-wrap: break-word;
   }
 
 .infoBut{
@@ -71,7 +72,29 @@
     opacity: 0.8;
     cursor: pointer;
 }
-
+.infoText{
+    margin:0 auto;
+    margin-top: 48px;
+    max-width: 343px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+}
+.infoBlock{
+    margin: 0 auto;
+    margin-top: 48px;
+    max-width: 343px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid rgba(255, 67, 16, 1);
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21.6px;
+}
+.infoBlockText{
+    max-width: 311px;
+}
 .marquee {
     margin-top: 48px;
     position: relative;

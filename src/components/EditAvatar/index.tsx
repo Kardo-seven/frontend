@@ -13,7 +13,6 @@ export default function EditAvatar() {
   } = useForm();
 
   const onSubmit = async (data: any) => {
-console.log(data.download[0]);
   }
 
   return (

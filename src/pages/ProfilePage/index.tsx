@@ -32,7 +32,6 @@ export default function ProfilePage() {
   }, [profile]);
 
   const myProfile = useAppSelector((state) => state.user.currentUser);
-  console.log(myProfile);
 
   const [openEditAvatar, setOpenEditAvatar] = useState(false);
   const [openAchieveInfo, setOpenAchieveInfo] = useState(false);

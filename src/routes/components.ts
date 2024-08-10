@@ -9,5 +9,6 @@ const ProfilePage = lazy(() => import('../pages/ProfilePage'));
 const ContentPage = lazy(() => import('../pages/ContentPage'));
 const EditProfilePage = lazy(() => import('../pages/EditProfilePage'));
 const ContestsPage = lazy(() => import('../pages/ContestsPage'));
+const PrizePage = lazy(() => import('../pages/PrizePage'));
 
-export { LoginPage, NotFoundPage, MainPage, EventsPage, DirectionsPage, ProfilePage, ContentPage, EditProfilePage, ContestsPage };
+export { LoginPage, NotFoundPage, MainPage, EventsPage, DirectionsPage, ProfilePage, ContentPage, EditProfilePage, ContestsPage, PrizePage };

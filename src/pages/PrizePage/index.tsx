@@ -10,7 +10,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import Navtab from '../../components/Navtab'
 import { useActions } from '../../hooks/actions';
 
-export default function ContestsPage() {
+export default function PrizePage() {
     const navigate = useNavigate();
     const location = useLocation();
     const event = location.state;
@@ -18,7 +18,7 @@ export default function ContestsPage() {
     const { openModal, openPopup, setCurrentEvent } = useActions();
     const handleSubmitАpplication=((e)=>{
         e.preventDefault();
-        setCurrentEvent(1);
+        setCurrentEvent(event);
     })
 
     return (
@@ -26,13 +26,17 @@ export default function ContestsPage() {
             <header className={styles.header}>
                 <div className={styles.headerContainer}>
                     <Link to='/events' className={styles.reset} />
-                    <h2 className={styles.headerTitle}>Соревнования</h2>
-                    <p className={styles.headerText}>Регистрация на национальные и региональные этапы.</p>
+                    <h2 className={styles.headerTitle}>Премия</h2>
+                    <p className={styles.headerText}>Определены 120 номинантов конкурса «Премия» в 10 направлениях!</p>
                 </div>
             </header>
             <section className={styles.contests}>
                 <section>
-                    <button className={styles.infoBut} onClick={handleSubmitАpplication}>Подать заявку</button>
+                    <button className={styles.infoBut} onClick={handleSubmitАpplication}>К списку номинантов</button>
+                    <p className={styles.infoText}>«Премия» — одно из конкурсных направлений международной конкурс-премии «КАРДО», ориентированное на признание и поощрение лучших сообществ и организации, которые внесли наибольший вклад в развитие конкретного направления уличной культуры и спорта за прошедший год (2023).</p>
+                    <div className={styles.infoBlock}>
+                        <p className={styles.infoBlockText}>Путёвка в Гранд-Финал, призовой фонд по 100 000 рублей на каждое направление в конкурсе!</p>
+                    </div>
                     <div className={styles.marquee}>
                         <div className={styles.track}>
                             <div className={styles.content}>&nbsp;УЛИЦА НАЧИНАЕТСЯ ЗДЕСЬ • УЛИЦА НАЧИНАЕТСЯ ЗДЕСЬ • УЛИЦА НАЧИН </div>

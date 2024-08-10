@@ -30,3 +30,15 @@ type UserPersonalData = {
   password: string;
   newPassword?: string;
 };
+
+type Event = {
+  id: number,
+  eventType: string,
+  title: string,
+  eventImageDtoResponse: {
+    id: number,
+    title: string,
+    type: string,
+    link: string
+  },
+};

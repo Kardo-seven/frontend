@@ -79,7 +79,6 @@ export default function LoginPage() {
       const res = await registration(data).unwrap();
       if (res) {
         setActiveTab('enter');
-        console.log(res);
       }
     } catch (error) {
       console.log(error);
