@@ -37,3 +37,15 @@ type DocumentData = {
   title: string;
   type: string;
 };
+
+type Event = {
+  id: number,
+  eventType: string,
+  title: string,
+  eventImageDtoResponse: {
+    id: number,
+    title: string,
+    type: string,
+    link: string
+  },
+};
