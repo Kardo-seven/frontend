@@ -31,6 +31,13 @@ type UserPersonalData = {
   newPassword?: string;
 };
 
+type DocumentData = {
+  documentId: number;
+  link: string;
+  title: string;
+  type: string;
+};
+
 type Event = {
   id: number,
   eventType: string,
