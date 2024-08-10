@@ -11,6 +11,7 @@ const EditProfilePage = lazy(() => import('../pages/EditProfilePage'));
 const SettingsAccountPage = lazy(() => import('../pages/SettingsAccountPage'));
 const DocumentsPage = lazy(() => import('../pages/DocumentsPage'));
 const ContestsPage = lazy(() => import('../pages/ContestsPage'));
+const PrizePage = lazy(() => import('../pages/PrizePage'));
 
-export { LoginPage, NotFoundPage, MainPage, EventsPage, DirectionsPage, ProfilePage, ContentPage, EditProfilePage, ContestsPage, SettingsAccountPage, DocumentsPage };
+export { LoginPage, NotFoundPage, MainPage, EventsPage, DirectionsPage, ProfilePage, ContentPage, EditProfilePage, ContestsPage, SettingsAccountPage, DocumentsPage, PrizePage };
 
