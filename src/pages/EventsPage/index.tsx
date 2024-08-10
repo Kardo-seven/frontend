@@ -6,33 +6,34 @@ import {
 // import { RootState } from '../../store';
 // import { useActions } from '../../hooks/actions';
 // import { useNavigate } from 'react-router-dom';
-// import { useEffect } from 'react';
+import { useEffect } from 'react';
 import Navbar from '../../components/Navbar';
+import { useLazyGetEventsQuery } from '../../store/kardo/kardo.api'
+import { StyledEvent } from './StyledEvent';
 
 export default function EventsPage() {
+  const [triggerMyProfile, { data: events }] = useLazyGetEventsQuery();
+  
+  useEffect(() => {
 
+    triggerMyProfile()
+    console.log('data', events)
+  }, [events])
   return (
     <section className={styles.section}>
-      <nav className={styles.mainPage}>
-        <Link to="/contests" className={`${styles.coverBackground} ${styles.coverBackgroundContests}`}>
-          <h2 className={styles.coverTitle}>Соревнования</h2>
-        </Link>
-        <Link to="#" className={`${styles.coverBackground} ${styles.coverBackgroundPrize}`}>
-          <h2 className={styles.coverTitle}>Премия</h2>
-        </Link>
-        <Link to="#" className={`${styles.coverBackground} ${styles.coverBackgroundProjects}`}>
-          <h2 className={styles.coverTitle}>Проекты</h2>
-        </Link>
-        <Link to="#" className={`${styles.coverBackground} ${styles.coverBackgroundVideoContest}`}>
-          <h2 className={styles.coverTitle}>Видеоконкурс</h2>
-        </Link>
-        <Link to="#" className={`${styles.coverBackground} ${styles.coverBackgroundChildren}`}>
-          <h2 className={styles.coverTitle}>Дети</h2>
-        </Link>
-        <Link to="#" className={`${styles.coverBackground} ${styles.coverBackgroundGrand}`}>
-          <h2 className={styles.coverTitle}>Гранд-финал</h2>
-        </Link>
-      </nav>
+      {events ? (
+        <nav className={styles.mainPage}>
+          {events.map((event) => (
+            <Link key={event.id} to={{
+              pathname: 'contests',
+             }} state={event} className={`${styles.coverBackground}`}>
+              <StyledEvent urlImage={`http://kardo.zapto.org/${event.eventImageDtoResponse.link}`}>
+                <h2 className={styles.coverTitle}>{event.title}</h2>
+              </StyledEvent>
+            </Link>
+          ))}
+        </nav>
+      ) : (<nav className={styles.mainPageNo}><h2>Идёт загрузка</h2></nav>)}
       <Navbar />
     </section>
   );

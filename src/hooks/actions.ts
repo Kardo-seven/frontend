@@ -5,6 +5,7 @@ import { onboardingActions } from '../store/kardo/onboarding.slice';
 import { modalActions } from '../store/kardo/modal.slice';
 import { popupActions } from '../store/kardo/popup.slice';
 import { currentUserActions } from '../store/kardo/profile.slice';
+import { currentEventActions } from '../store/kardo/event.slice'
 
 
 const actions = {
@@ -13,6 +14,7 @@ const actions = {
   ...modalActions,
   ...popupActions,
   ...currentUserActions,
+  ...currentEventActions
 };
 
 export const useActions = () => {

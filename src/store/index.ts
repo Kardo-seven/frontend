@@ -5,7 +5,7 @@ import { onboardingReducer } from './kardo/onboarding.slice';
 import { modalReducer } from './kardo/modal.slice';
 import { popupReducer } from './kardo/popup.slice';
 import { currentUserReducer } from './kardo/profile.slice';
-
+import {currentEventReducer} from './kardo/event.slice'
 export const store = configureStore({
   reducer: {
     [api.reducerPath]: api.reducer,
@@ -14,6 +14,7 @@ export const store = configureStore({
     modal: modalReducer,
     popup: popupReducer,
     user: currentUserReducer,
+    event: currentEventReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(api.middleware),
