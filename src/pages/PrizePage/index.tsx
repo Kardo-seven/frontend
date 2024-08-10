@@ -6,16 +6,16 @@ import styles from './styles.module.css';
 // import { useActions } from '../../hooks/actions';
 // import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import {  useLocation } from 'react-router-dom';
 import Navtab from '../../components/Navtab'
 import { useActions } from '../../hooks/actions';
 
 export default function PrizePage() {
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     const location = useLocation();
     const event = location.state;
     const [activeTab, setActiveTab] = useState('mechanika')
-    const { openModal, openPopup, setCurrentEvent } = useActions();
+    const { setCurrentEvent } = useActions();
     const handleSubmitАpplication=((e)=>{
         e.preventDefault();
         setCurrentEvent(event);
