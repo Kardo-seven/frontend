@@ -2,18 +2,24 @@
   width: 343px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: start;
   padding: 44px 16px 8px;
   box-sizing: border-box;
   flex: 0 0 auto;
 }
 
 .header__title {
-  width: 295px;
   font-size: 22px;
   font-style: normal;
   font-weight: 700;
   line-height: 120%;
   padding: 0;
   margin: 0;
+}
+
+.header__title_big {
+  font-family: 'Grtsk Tera';
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 120%;
 }

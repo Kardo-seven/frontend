@@ -9,7 +9,7 @@
   height: 48px;
   border: none;
   background-color: var(--Base-Carrot);
-  padding: 10px 24px;
+  padding: 10px 0px;
   box-sizing: border-box;
   font-size: 18px;
   font-weight: 700;
@@ -42,6 +42,11 @@
   background-color: transparent;
 }
 
+.actionButton_disabled {
+  border: 2px solid var(--Shade-Gray-Dark);
+  background-color: transparent;
+  color: var(--Shade-Gray-Dark);
+}
 
 .actionButtonDownload {
   margin-bottom: 25px;

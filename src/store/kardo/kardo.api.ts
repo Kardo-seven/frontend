@@ -30,13 +30,19 @@ export const api = createApi({
     baseUrl: 'https://kardo.zapto.org/',
     prepareHeaders: (headers) => {
       const authToken = localStorage.getItem('authToken');
+      const avatar = localStorage.getItem('avatar');
       if (authToken) {
         headers.set('Authorization', `Bearer ${authToken}`);
       }
+      if (avatar) {
+        headers.set('Content-Type', 'multipart/form-data');
+        headers.append('Content-Type', 'boundary=myBoundary');
+      }
+
       return headers;
     },
   }),
-  tagTypes: ['Auth', 'Subscription', 'User', 'Event'],
+  tagTypes: ['Auth', 'Subscription', 'User', 'Event',],
   endpoints: (build) => ({
     login: build.mutation<LoginResponse, LoginRequest>({
       query: (credentials) => ({
@@ -60,7 +66,12 @@ export const api = createApi({
       }),
       providesTags: ['User'],
     }),
-    postAvatar: build.mutation<void, FormData>({
+    getUserEvents: build.query<any, void>({
+      query: () => ({
+        url: 'user/request',
+      }),
+    }),
+    postAvatar: build.mutation<FormData, any>({
       query: (formData) => ({
         url: 'user/avatar/upload',
         method: 'POST',
@@ -75,7 +86,7 @@ export const api = createApi({
       }),
       invalidatesTags: ['User'],
     }),
-    getEvents: build.query<Event[], void>({
+    getEvents: build.query<EventData[], void>({
       query: () => ({
         url: 'event',
       }),
@@ -85,8 +96,17 @@ export const api = createApi({
       query: () => ({
         url: 'about/documents',
       }),
-    })
+    }),
   }),
 });
 
-export const { useLoginMutation, useRegistrationMutation, useLazyGetMyProfileQuery, usePostAvatarMutation, usePatchPersonalDataMutation, useLazyGetDocumentsQuery, useLazyGetEventsQuery } = api;
+export const {
+  useLoginMutation,
+  useRegistrationMutation,
+  useLazyGetMyProfileQuery,
+  usePostAvatarMutation,
+  usePatchPersonalDataMutation,
+  useLazyGetDocumentsQuery,
+  useLazyGetEventsQuery,
+  useLazyGetUserEventsQuery
+} = api;

@@ -19,7 +19,11 @@ import AchieveModal from '../../components/AchieveModal';
 import { useState } from 'react';
 import EditAvatar from '../../components/EditAvatar';
 import Menu from '../../components/Menu';
-import { useLazyGetMyProfileQuery } from '../../store/kardo/kardo.api';
+import {
+  useLazyGetMyProfileQuery,
+  useLazyGetEventsQuery,
+  useLazyGetUserEventsQuery,
+} from '../../store/kardo/kardo.api';
 import { useEffect } from 'react';
 import { useAppSelector } from '../../hooks/redux';
 import ExitConfirm from '../../components/ExitConfirm';
@@ -28,17 +32,31 @@ import Navtab from '../../components/Navtab';
 export default function ProfilePage() {
   const navigate = useNavigate();
   const [triggerMyProfile, { data: profile }] = useLazyGetMyProfileQuery();
-  const { openModal, openPopup, setCurrentUser } = useActions();
-  useEffect( () => { async () => {
-        await triggerMyProfile();
-        if (profile === undefined) {
-          localStorage.removeItem('authToken');
-          navigate('/login');
-        }
-        await setCurrentUser(profile);
-  }
+  const [triggerEvents, { data: events }] = useLazyGetEventsQuery();
+  const [triggerUserEvents, { data: userEvents }] = useLazyGetUserEventsQuery();
+  const { openModal, openPopup, setCurrentUser, setCurrentEvent } =
+    useActions();
 
+  useEffect(() => {
+    async () => {
+      await triggerMyProfile();
+      await setCurrentUser(profile);
+    };
   }, [profile]);
+
+  useEffect(() => {
+    {
+      triggerEvents();
+      console.log(events);
+    }
+  }, [events]);
+
+  useEffect(() => {
+    {
+      triggerUserEvents();
+      console.log(userEvents);
+    }
+  }, [userEvents]);
 
   const myProfile = useAppSelector((state) => state.user.currentUser);
 
@@ -144,7 +162,27 @@ export default function ProfilePage() {
                 <li>Публикация</li>
               </ul>
             )}
-            {activeTab === 'registration' && <div>Запись на конкурс</div>}
+            {activeTab === 'registration' && (
+              <ul className={styles.mainPage__eventsList}>
+                {events &&
+                  events.map((event) => (
+                    <li className={styles.mainPage__eventsItem} key={event.id}>
+                      <h4 className={styles.mainPage__eventsTitle}>
+                        {event.title}
+                      </h4>
+                      <div
+                        className={styles.mainPage__eventsButton}
+                        onClick={() => {
+                          navigate(`/events/apply/${event.id}`);
+                          setCurrentEvent(event);
+                        }}
+                      >
+                        <ActionButton title="Подать заявку" size="s" />
+                      </div>
+                    </li>
+                  ))}
+              </ul>
+            )}
           </div>
         )}
       </div>

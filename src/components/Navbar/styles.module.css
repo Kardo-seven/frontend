@@ -6,7 +6,7 @@
   padding: 16px 32px 32px;
   box-sizing: border-box;
   background-color: var(--Base-Black);
-  z-index: 5;
+  z-index: 7;
 }
 
 .navList {

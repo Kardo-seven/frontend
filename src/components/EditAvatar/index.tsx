@@ -2,18 +2,28 @@ import styles from './styles.module.css';
 import avatar from '../../assets/images/profile/Avatar.png';
 import ActionButton from '../ActionButton';
 import { useForm } from 'react-hook-form';
-// import { usePostAvatarMutation } from '../../store/kardo/kardo.api';
+import { useState } from 'react';
+import { usePostAvatarMutation } from '../../store/kardo/kardo.api';
 
 export default function EditAvatar() {
-  // const [postAvatar] = usePostAvatarMutation();
+  const [postAvatar] = usePostAvatarMutation();
   const {
     register,
     handleSubmit,
-    // formState: { errors },
   } = useForm();
 
+  const [isDisabled, setIsDisabled] = useState(true);
+  const formData = new FormData();
+console.log(formData);
+
   const onSubmit = async (data: any) => {
-    console.log(data.download[0]);
+
+    await formData.append('file', data.download[0]);
+    // localStorage.setItem('avatar', data.download[0].name);
+
+    // await postAvatar(formData).unwrap();
+
+    localStorage.removeItem('avatar');
   };
 
   return (
@@ -31,10 +41,13 @@ export default function EditAvatar() {
             <input
               type="file"
               id="download"
-              {...register('download', { required: true })}
+              {...register('download', {
+                required: true,
+                onChange: () => setIsDisabled(false),
+              })}
             />
           </div>
-          <ActionButton title="Сохранить" type="submit" />
+          <ActionButton title="Сохранить" type="submit" disabled={isDisabled} />
         </form>
         <ActionButton title="Удалить" secondary color="black" />
       </div>

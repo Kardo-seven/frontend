@@ -17,6 +17,7 @@ import {
   DocumentsPage,
   ContestsPage,
   PrizePage,
+  ApplyPage
 } from './components';
 
 import Layout from '../components/Layout';
@@ -40,6 +41,7 @@ const router = createBrowserRouter(
         <Route path="main" element={<MainPage />} />
         <Route path="directions" element={<DirectionsPage />} />
         <Route path="events" element={<EventsPage />} />
+        <Route path="events/apply/:id" element={<ApplyPage />} />
         <Route path="events/contests" element={<ContestsPage />} />
         <Route path="events/prize" element={<PrizePage />} />
         <Route path="*" element={<NotFoundPage />} />

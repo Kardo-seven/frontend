@@ -38,7 +38,7 @@ type DocumentData = {
   type: string;
 };
 
-type Event = {
+type EventData = {
   id: number,
   eventType: string,
   title: string,

@@ -8,6 +8,7 @@ export default function ActionButton({
   type,
   color,
   download,
+  disabled,
 }: {
   title: string;
   size?: string;
@@ -16,6 +17,7 @@ export default function ActionButton({
   type?: 'button' | 'submit' | 'reset';
   color?: string;
   download?: boolean;
+  disabled?: boolean;
 }) {
   return (
     <div className={styles.actionButtonContainer}>
@@ -25,7 +27,9 @@ export default function ActionButton({
             size === 's' ? `${styles.actionButton_size_s}` : ''
           } ${color === 'black' ? `${styles.actionButton_color_black}` : ''} ${
             secondary ? `${styles.actionButton_secondary}` : ''
-          } ${doubleSecondary ? `${styles.actionButton_doubleSecondary}` : ''}`}
+          } ${
+            doubleSecondary ? `${styles.actionButton_doubleSecondary}` : ''
+          } ${disabled ? `${styles.actionButton_disabled}` : ''}`}
           type={type ? type : 'button'}
         >
           {title}

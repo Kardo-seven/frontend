@@ -1,0 +1,12 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--Base-Black);
+}
+
+.mainPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: var(--max-desktop-width);
+}

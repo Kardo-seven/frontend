@@ -1,5 +1,6 @@
-@import url(./vendor/normalize.css);
+@import url('./vendor/normalize.css');
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('./vendor/fonts/fonts.css');
 
 :root {
   font-family: 'Rubik', Arial, Helvetica, sans-serif;

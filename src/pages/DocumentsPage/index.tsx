@@ -37,7 +37,7 @@ export default function DocumentsPage() {
 
   return (
     <section className={styles.section}>
-      <HeaderArrow title="Документы" />
+      <HeaderArrow title="Документы" size='big'/>
       <main className={styles.mainPage}>
         {documents && (
           <ul className={styles.mainPage__documentsList}>
