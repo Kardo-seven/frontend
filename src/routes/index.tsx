@@ -13,8 +13,10 @@ import {
   ProfilePage,
   ContentPage,
   EditProfilePage,
+  SettingsAccountPage,
+  DocumentsPage,
   ContestsPage,
-  PrizePage
+  PrizePage,
 } from './components';
 
 import Layout from '../components/Layout';
@@ -30,14 +32,16 @@ const router = createBrowserRouter(
             path="profile/edit-profile-info"
             element={<EditProfilePage />}
           />
+          <Route path="profile/settings" element={<SettingsAccountPage />} />
         </Route>
         <Route path="content" element={<ContentPage />} />
+        <Route path="documents" element={<DocumentsPage />} />
         <Route path="login" element={<LoginPage />} />
         <Route path="main" element={<MainPage />} />
         <Route path="directions" element={<DirectionsPage />} />
         <Route path="events" element={<EventsPage />} />
-         <Route path="events/contests" element={<ContestsPage />} />
-         <Route path="events/prize" element={<PrizePage />} />
+        <Route path="events/contests" element={<ContestsPage />} />
+        <Route path="events/prize" element={<PrizePage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </>
