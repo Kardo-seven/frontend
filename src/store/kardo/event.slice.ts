@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 interface EventState {
-  currentEvent: Event;
+  currentEvent: EventData;
 }
 
 const initialState: EventState = {
