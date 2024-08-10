@@ -14,3 +14,4 @@ const ContestsPage = lazy(() => import('../pages/ContestsPage'));
 const PrizePage = lazy(() => import('../pages/PrizePage'));
 
 export { LoginPage, NotFoundPage, MainPage, EventsPage, DirectionsPage, ProfilePage, ContentPage, EditProfilePage, ContestsPage, SettingsAccountPage, DocumentsPage, PrizePage };
+
