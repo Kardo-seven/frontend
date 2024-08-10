@@ -1,5 +1,4 @@
 import { lazy } from 'react';
-import ApplyPage from '../pages/ApplyPage/index';
 
 const LoginPage = lazy(() => import('../pages/LoginPage'));
 const NotFoundPage = lazy(() => import('../pages/NotFoundPage'));

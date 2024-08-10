@@ -49,3 +49,26 @@ type EventData = {
     link: string
   },
 };
+
+type EventDataBig = {
+  id: number;
+  eventDate: string;
+  startTime: string;
+  endTime: string;
+  description: string;
+  eventType: string;
+  location: string;
+  title: string;
+  isGrandFinalEvent: boolean;
+  eventImageDtoResponse: {
+    id: number;
+    title: string;
+    type: string;
+    link: string;
+  };
+  directionSet: [
+    {
+      direction: string;
+    }
+  ];
+};
