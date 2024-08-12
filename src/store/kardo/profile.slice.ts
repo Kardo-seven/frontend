@@ -16,9 +16,6 @@ const initialState: UserState = {
   city: '',
   citizenship: '',
   socialLink: '',
-  phone: '',
-  email: '',
-  password: '',
   },
 };
 
