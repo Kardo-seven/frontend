@@ -7,7 +7,7 @@
 }
 .header{
   font-family: 'Rubik';
-  background-image: linear-gradient(rgba(0, 0, 0, 0.68) 20%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.85) 80%), url(../../assets/images/events/prizeMenu.png);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.68) 10%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.85) 80%), url(../../assets/images/events/videoContestsMenu.png);
   background-size: cover;
   background-repeat: no-repeat;
   display: block;
@@ -36,7 +36,7 @@
 
 .headerTitle{
   margin: 0;
-  margin-top: 177px;
+  margin-top: 153px;
   font-weight: 700;
   font-size: 32px;
   line-height: 38.4px;
@@ -66,6 +66,7 @@
   color: white;
   border: none;
   margin-top: 16px;
+  margin-bottom: 48px;
 }
 
 .infoBut:hover{
@@ -132,7 +133,6 @@
   margin: 0 auto;
   width: 343px;
   display:block;
-  margin-top: 48px;
 }
 
 .navtabTitle{
@@ -141,12 +141,13 @@
   font-size: 22px;
   font-weight: 700;
 }
-.navtabSubTitle{
+.navtabSubtitle{
   margin: 0;
   margin-top: 16px;
   font-size: 18px;
   font-weight: 700;
   line-height: 21.6px;
+  color: var(--Base-Carrot);
 }
 
 .navtabText{
@@ -156,6 +157,7 @@
   font-weight: 400;
   line-height: 21px;
   font-family: 'Rubik';
+  word-wrap: break-word;
 }
 
 .navtabImg{
@@ -208,3 +210,4 @@
   opacity: 0.8;
   cursor: pointer;
 }
+
