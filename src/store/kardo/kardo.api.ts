@@ -42,7 +42,7 @@ export const api = createApi({
       return headers;
     },
   }),
-  tagTypes: ['Auth', 'Subscription', 'User', 'Event',],
+  tagTypes: ['Auth', 'Subscription', 'User', 'Event'],
   endpoints: (build) => ({
     login: build.mutation<LoginResponse, LoginRequest>({
       query: (credentials) => ({
@@ -97,6 +97,18 @@ export const api = createApi({
         url: 'about/documents',
       }),
     }),
+    postApplyEvent: build.mutation<any, { data: ApplyEvent, eventId: string }>({
+      query: ({ data, eventId }) => ({
+        url: `user/request/${eventId}`,
+        method: 'POST',
+        body: data,
+      }),
+    }),
+    getResources: build.query<ResourceData[], void>({
+      query: () => ({
+        url: 'about/branding',
+      }),
+    })
   }),
 });
 
@@ -108,5 +120,7 @@ export const {
   usePatchPersonalDataMutation,
   useLazyGetDocumentsQuery,
   useLazyGetEventsQuery,
-  useLazyGetUserEventsQuery
+  useLazyGetUserEventsQuery, 
+  usePostApplyEventMutation,
+  useLazyGetResourcesQuery
 } = api;

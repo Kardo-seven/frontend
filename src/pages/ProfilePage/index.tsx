@@ -38,23 +38,19 @@ export default function ProfilePage() {
     useActions();
 
   useEffect(() => {
-    async () => {
-      await triggerMyProfile();
-      await setCurrentUser(profile);
-    };
+    triggerMyProfile();
+    setCurrentUser(profile);
   }, [profile]);
 
   useEffect(() => {
     {
       triggerEvents();
-      console.log(events);
     }
   }, [events]);
 
   useEffect(() => {
     {
       triggerUserEvents();
-      console.log(userEvents);
     }
   }, [userEvents]);
 
@@ -65,6 +61,13 @@ export default function ProfilePage() {
   const [openGetOut, setOpenGetOut] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeTab, setActiveTab] = useState('feed');
+
+  function includeId(id: number) {
+    const res = userEvents && userEvents.find((event: any) => event.id === id);
+    if (res) {
+      return true;
+    } else return false;
+  }
 
   return (
     <section className={styles.section}>
@@ -94,16 +97,14 @@ export default function ProfilePage() {
                 <li className={styles.mainPage__profileDataItem}>
                   <p className={styles.mainPage__profileDataText}>Подписчики</p>
                   <span className={styles.mainPage__profileDataValue}>4</span>
-                </li>{' '}
+                </li>
                 <li className={styles.mainPage__profileDataItem}>
                   <p className={styles.mainPage__profileDataText}>Подписки</p>
                   <span className={styles.mainPage__profileDataValue}>8</span>
                 </li>
               </ul>
             </div>
-            <div className={styles.mainPage__subscribe}>
-              <ActionButton title="Подписаться" size="s" />
-            </div>
+
             <div className={styles.mainPage__achievementSection}>
               <h2 className={styles.mainPage__achievementHeader}>Достижения</h2>
               <button
@@ -156,29 +157,32 @@ export default function ProfilePage() {
               state={activeTab}
             />
             {activeTab === 'feed' && (
-              <ul>
-                <li>Публикация</li>
-                <li>Публикация</li>
-                <li>Публикация</li>
-              </ul>
+              <p>Публикаций нет</p>
             )}
             {activeTab === 'registration' && (
               <ul className={styles.mainPage__eventsList}>
-                {events &&
+                {userEvents &&
+                  events &&
                   events.map((event) => (
                     <li className={styles.mainPage__eventsItem} key={event.id}>
                       <h4 className={styles.mainPage__eventsTitle}>
                         {event.title}
                       </h4>
-                      <div
-                        className={styles.mainPage__eventsButton}
-                        onClick={() => {
-                          navigate(`/events/apply/${event.id}`);
-                          setCurrentEvent(event);
-                        }}
-                      >
-                        <ActionButton title="Подать заявку" size="s" />
-                      </div>
+                      {includeId(event.id) ? (
+                        <p className={styles.mainPage__eventsDoneText}>
+                          Заявка подана
+                        </p>
+                      ) : (
+                        <div
+                          className={styles.mainPage__eventsButton}
+                          onClick={() => {
+                            navigate(`/events/apply/${event.id}`);
+                            setCurrentEvent(event);
+                          }}
+                        >
+                          <ActionButton title="Подать заявку" size="s" />
+                        </div>
+                      )}
                     </li>
                   ))}
               </ul>

@@ -2,7 +2,7 @@
 import styles from './styles.module.css';
 // import { RootState } from '../../store';
 // import { useActions } from '../../hooks/actions';
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 // import { useEffect } from 'react';
 import HeaderArrow from '../../components/HeaderArrow';
 import Navtab from '../../components/Navtab';
@@ -13,6 +13,7 @@ import { usePatchPersonalDataMutation } from '../../store/kardo/kardo.api';
 import { useAppSelector } from '../../hooks/redux';
 
 export default function EditProfilePage() {
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState('personal-data');
   const [patchPersonalData] = usePatchPersonalDataMutation();
   const {
@@ -24,8 +25,8 @@ export default function EditProfilePage() {
   const myProfile = useAppSelector((state) => state.user.currentUser);
 
   const onSubmitPersonalData = async (data: any) => {
-    const res = await patchPersonalData(data);
-    console.log(res);
+    await patchPersonalData(data);
+    navigate('/profile', { replace: true });
   };
 
   return (

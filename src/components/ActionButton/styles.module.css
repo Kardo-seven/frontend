@@ -19,6 +19,7 @@
 
 .actionButton:active {
   transition: all 0.3s ease;
+  background-color: var(--Shade-Carrot-Light);
 }
 
 .actionButton_size_s {
@@ -35,6 +36,10 @@
 .actionButton_secondary {
   border: 1px solid var(--Base-Carrot);
   background-color: transparent;
+}
+
+.actionButton_secondary:active {
+  background-color: var(--Shade-Carrot-Light);
 }
 
 .actionButton_doubleSecondary {

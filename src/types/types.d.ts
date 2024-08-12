@@ -38,6 +38,13 @@ type DocumentData = {
   type: string;
 };
 
+type ResourceData = {
+  resourceId: number;
+  link: string;
+  title: string;
+  type: string;
+};
+
 type EventData = {
   id: number,
   eventType: string,
@@ -71,4 +78,18 @@ type EventDataBig = {
       direction: string;
     }
   ];
+};
+
+type ApplyEvent = {
+  name: string;
+  lastName: string;
+  surName: string;
+  phone: string;
+  email: string;
+  address: string;
+  birthday: string;
+  gender: string;
+  typeOfSelection: string;
+  linkList: string[];
+  directionEnumList: string[];
 };
