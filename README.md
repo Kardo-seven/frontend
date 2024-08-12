@@ -22,7 +22,7 @@
 
 ## 🖥 Демо
 
-Деплой на Vercel: [ya-am-crm.vercel.app](https://kardo-frontend.vercel.app/)
+Деплой на Vercel: [kardo-frontend.vercel.app](https://kardo-frontend.vercel.app/)
 
 ## 🚀Установка и запуск проекта:
 
