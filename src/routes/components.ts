@@ -13,6 +13,9 @@ const ContestsPage = lazy(() => import('../pages/ContestsPage'));
 const PrizePage = lazy(() => import('../pages/PrizePage'));
 const ApplyPage = lazy(() => import('../pages/ApplyPage'));
 const ResourсesPage = lazy(() => import('../pages/ResoursesPage'));
+const ProjectsPage = lazy(() => import('../pages/ProjectsPage'));
+const VideoContestsPage = lazy(() => import('../pages/VideoContestPage'));
+const ChildrenPage = lazy(() => import('../pages/ChildrenPage'));
 
-export { LoginPage, NotFoundPage, MainPage, EventsPage, DirectionsPage, ProfilePage, ContentPage, EditProfilePage, ContestsPage, SettingsAccountPage, DocumentsPage, PrizePage, ApplyPage, ResourсesPage };
+export { LoginPage, NotFoundPage, MainPage, EventsPage, DirectionsPage, ProfilePage, ContentPage, EditProfilePage, ContestsPage, SettingsAccountPage, DocumentsPage, PrizePage, ApplyPage, ResourсesPage, ProjectsPage, VideoContestsPage, ChildrenPage, };
 
