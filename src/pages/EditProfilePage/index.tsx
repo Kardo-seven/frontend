@@ -1,9 +1,5 @@
-// import { useAppSelector } from '../../hooks/redux';
 import styles from './styles.module.css';
-// import { RootState } from '../../store';
-// import { useActions } from '../../hooks/actions';
 import { useNavigate } from 'react-router-dom';
-// import { useEffect } from 'react';
 import HeaderArrow from '../../components/HeaderArrow';
 import Navtab from '../../components/Navtab';
 import { useState } from 'react';
@@ -19,14 +15,13 @@ export default function EditProfilePage() {
   const {
     register,
     handleSubmit,
-    // formState: { errors },
   } = useForm<UserPersonalData>();
 
   const myProfile = useAppSelector((state) => state.user.currentUser);
 
   const onSubmitPersonalData = async (data: any) => {
     await patchPersonalData(data);
-    navigate('/profile', { replace: true });
+    navigate('/profile');
   };
 
   return (
@@ -238,7 +233,9 @@ export default function EditProfilePage() {
                 Изменить почтовый адрес
               </button>
             </div>
-            <h2 className={styles.editProfile__titleDescription}>Изменить пароль</h2>
+            <h2 className={styles.editProfile__titleDescription}>
+              Изменить пароль
+            </h2>
             <div
               className={`${styles.editProfile__inputField} ${styles.editProfile__inputField_type_big}`}
             >

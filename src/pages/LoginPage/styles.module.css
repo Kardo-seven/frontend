@@ -78,6 +78,27 @@
   color: var(--Base-White);
 }
 
+.loginPage__input:focus {
+  outline: none;
+}
+
+.loginPage__inputError {
+  border-color: var(--System-Error);
+  color: var(--System-Error);
+}
+
+.loginPage__errorSpan {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  color: var(--System-Error);
+}
+
+.loginPage__inputError::placeholder {
+  color: var(--System-Error);
+}
+
 .loginPage__label {
   font-size: 14px;
   font-weight: 400;
@@ -96,7 +117,7 @@
   left: 0;
   bottom: -26px;
   text-decoration: underline;
-  text-underline-offset: 4px
+  text-underline-offset: 4px;
 }
 
 .notificationPersonalData {

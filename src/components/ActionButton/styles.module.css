@@ -53,6 +53,10 @@
   color: var(--Shade-Gray-Dark);
 }
 
+.actionButton_disabled:active {
+  background-color: transparent;
+}
+
 .actionButtonDownload {
   margin-bottom: 25px;
 }

@@ -35,6 +35,7 @@ export default function ApplyPage() {
               typeOfSelection: data.typeOfSelection,
               linkList: [data.linkList],
               directionEnumList: data.directionEnumList,
+              
             },
             eventId
           }
