@@ -4,16 +4,16 @@ import {
 import styles from './styles.module.css';
 // import { RootState } from '../../store';
 // import { useActions } from '../../hooks/actions';
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-// import {  useLocation } from 'react-router-dom';
+import {  useLocation } from 'react-router-dom';
 import Navtab from '../../components/Navtab'
 import { useActions } from '../../hooks/actions';
 
 export default function ContestsPage() {
-    // const navigate = useNavigate();
-    // const location = useLocation();
-    // const event = location.state;
+     const navigate = useNavigate();
+    const location = useLocation();
+    const event = location.state;
     const [activeTab, setActiveTab] = useState('mechanika')
     const {  setCurrentEvent } = useActions();
 
@@ -32,7 +32,10 @@ export default function ContestsPage() {
           <section>
             <button
               className={styles.infoBut}
-              onClick={() => setCurrentEvent(1)}
+              onClick={() => {
+                setCurrentEvent(event)
+                navigate('/profile')
+              }}
             >
               Подать заявку
             </button>
@@ -169,7 +172,7 @@ export default function ContestsPage() {
                   направлениях и их категориях, подробнее можете ознакомиться
                   в разделе «Документы».
                 </p>
-                <button className={styles.navtabButton}>Документы</button>
+                <button className={styles.navtabButton} onClick={()=>navigate('/documents')}>Документы</button>
               </>
             )}
           </section>

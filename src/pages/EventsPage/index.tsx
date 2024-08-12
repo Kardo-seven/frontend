@@ -22,7 +22,6 @@ export default function EventsPage() {
         setErrorMessage(`Ошибка ${res.status}`)
       }
     })
-    console.log('data', events)
   }, [events])
   return (
     <section className={styles.section}>
