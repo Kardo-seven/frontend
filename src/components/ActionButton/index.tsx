@@ -31,6 +31,7 @@ export default function ActionButton({
             doubleSecondary ? `${styles.actionButton_doubleSecondary}` : ''
           } ${disabled ? `${styles.actionButton_disabled}` : ''}`}
           type={type ? type : 'button'}
+          disabled={disabled}
         >
           {title}
         </button>
