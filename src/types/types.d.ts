@@ -25,6 +25,10 @@ type UserPersonalData = {
   city: string;
   citizenship: string;
   socialLink: string;
+  phone: string;
+  email: string;
+  password: string;
+  newPassword?: string;
 };
 
 type DocumentData = {
