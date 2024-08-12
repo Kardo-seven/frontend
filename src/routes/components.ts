@@ -1,5 +1,4 @@
 import { lazy } from 'react';
-
 const LoginPage = lazy(() => import('../pages/LoginPage'));
 const NotFoundPage = lazy(() => import('../pages/NotFoundPage'));
 const MainPage = lazy(() => import('../pages/MainPage'));
@@ -13,6 +12,7 @@ const DocumentsPage = lazy(() => import('../pages/DocumentsPage'));
 const ContestsPage = lazy(() => import('../pages/ContestsPage'));
 const PrizePage = lazy(() => import('../pages/PrizePage'));
 const ApplyPage = lazy(() => import('../pages/ApplyPage'));
+const ResourсesPage = lazy(() => import('../pages/ResoursesPage'));
 
-export { LoginPage, NotFoundPage, MainPage, EventsPage, DirectionsPage, ProfilePage, ContentPage, EditProfilePage, ContestsPage, SettingsAccountPage, DocumentsPage, PrizePage, ApplyPage };
+export { LoginPage, NotFoundPage, MainPage, EventsPage, DirectionsPage, ProfilePage, ContentPage, EditProfilePage, ContestsPage, SettingsAccountPage, DocumentsPage, PrizePage, ApplyPage, ResourсesPage };
 

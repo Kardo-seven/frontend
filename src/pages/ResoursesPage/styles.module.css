@@ -13,7 +13,7 @@
   min-height: calc(100vh - 100px);
 }
 
-.mainPage__documentsList {
+.mainPage__resourcesList {
   list-style: none;
   padding: 0 16px 0;
   display: flex;
@@ -22,14 +22,14 @@
   min-height: 796px;
   margin-top: 16px;
 }
-.mainPage__documentsItem {
+.mainPage__resourcesItem {
   width: 343px;
   height: 114px;
   background-color: var(--Base-White);
   display: flex;
 }
 
-.mainPage__documentsTitle {
+.mainPage__resourcesTitle {
   font-size: 16px;
   font-weight: 600;
   line-height: 120%;
@@ -44,5 +44,11 @@
   font-size: 16px;
   font-weight: 600;
   line-height: 120%;
-  padding: 0;
+  padding: 0 0 12px 0;
+}
+
+.mainPage__resourcesContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }

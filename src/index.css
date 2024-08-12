@@ -21,8 +21,11 @@
   --Base-Black: #000;
   --Base-Carrot: #ff4310;
   --Opacity-Carrot20: #FF431033;
+  --Shade-Carrot-Light: #FF714C;
   --Shade-Gray-Dark: #808080;
   --Popup-overlay: #00000099;
+  --System-Success: #00B341;
+
   
   --max-desktop-width: 375px;
 }

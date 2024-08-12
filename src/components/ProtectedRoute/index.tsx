@@ -6,7 +6,7 @@ const ProtectedRoute = () => {
   const isLoggedIn = useAppSelector(
     (state: RootState) => state.auth.isLoggedIn,
   );
-
+  !isLoggedIn && localStorage.clear();
   return isLoggedIn ? <Outlet /> : <Navigate to='/login'/>;
 };
 
