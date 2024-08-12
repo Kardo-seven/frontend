@@ -96,7 +96,7 @@ export default function ApplyPage() {
                   placeholder="Сыктывкар, Республика Коми, РФ"
                 />
               </div>
-              {event.title === 'Видеоконкурс' && (
+              {/* {event.title === 'Видеоконкурс' && (
                 <div>
                   <p>Видеозаявка</p>
                   <div className={styles.actionButtonDownload}>
@@ -115,7 +115,7 @@ export default function ApplyPage() {
                     />
                   </div>
                 </div>
-              )}
+              )} */}
               <h3 className={styles.main__subtitle}>Направления</h3>
               <div className={styles.checkboxesContainer}>
                 <div>
