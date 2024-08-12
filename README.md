@@ -1,4 +1,4 @@
-# 🏆Хакатон+. PAY2U
+# 🏆Хакатон+. KARDO
 
 Цель проекта - сделать веб приложение существующего сайта <a href="https://kardoaward.com/" target="_blank">https://kardoaward.com/</a>
 ## Команда фронтенда
@@ -22,7 +22,7 @@
 
 ## 🖥 Демо
 
-Деплой на Vercel: [ya-am-crm.vercel.app](https://pay2-you-ra2w.vercel.app/ )
+Деплой на Vercel: [ya-am-crm.vercel.app](https://kardo-frontend.vercel.app/)
 
 ## 🚀Установка и запуск проекта:
 
