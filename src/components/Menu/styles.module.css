@@ -3,7 +3,7 @@
   padding: 0;
   background-color: var(--Base-Black);
   width: 375px;
-  height: 100vh;
+  height: calc(100vh - 56px);
   position: fixed;
   top: -14px;
   display: none;
@@ -14,8 +14,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
-.menu__nav {
 }
 
 .menu__item {
