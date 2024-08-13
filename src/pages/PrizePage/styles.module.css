@@ -5,9 +5,15 @@
   width: 100%;
   font-family: 'Rubik';
 }
-.header{
+.header {
   font-family: 'Rubik';
-  background-image: linear-gradient(rgba(0, 0, 0, 0.68) 20%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.85) 80%), url(../../assets/images/events/prizeMenu.png);
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.68) 20%,
+      rgba(0, 0, 0, 0) 40%,
+      rgba(0, 0, 0, 0) 60%,
+      rgba(0, 0, 0, 0.85) 80%
+    ),
+    url(../../assets/images/events/prizeMenu.png);
   background-size: cover;
   background-repeat: no-repeat;
   display: block;
@@ -16,7 +22,7 @@
   height: 375px;
 }
 
-.headerContainer{
+.headerContainer {
   margin: 0 auto;
   margin-top: 16px;
   margin-left: 16px;
@@ -30,11 +36,11 @@
   display: block;
   background-size: contain;
 }
-.reset:hover{
+.reset:hover {
   opacity: 0.8;
 }
 
-.headerTitle{
+.headerTitle {
   margin: 0;
   margin-top: 177px;
   font-weight: 700;
@@ -42,7 +48,7 @@
   line-height: 38.4px;
 }
 
-.headerText{
+.headerText {
   margin: 0;
   margin-top: 8px;
   font-family: 'Rubik';
@@ -52,7 +58,7 @@
   word-wrap: break-word;
 }
 
-.infoBut{
+.infoBut {
   margin: 0 auto;
   display: flex;
   width: 343px;
@@ -68,19 +74,19 @@
   margin-top: 16px;
 }
 
-.infoBut:hover{
+.infoBut:hover {
   opacity: 0.8;
   cursor: pointer;
 }
-.infoText{
-  margin:0 auto;
+.infoText {
+  margin: 0 auto;
   margin-top: 48px;
   max-width: 343px;
   font-weight: 400;
   font-size: 14px;
   line-height: 21px;
 }
-.infoBlock{
+.infoBlock {
   margin: 0 auto;
   margin-top: 48px;
   max-width: 343px;
@@ -92,7 +98,7 @@
   font-size: 18px;
   line-height: 21.6px;
 }
-.infoBlockText{
+.infoBlockText {
   max-width: 311px;
 }
 .marquee {
@@ -118,29 +124,33 @@
 }
 
 @keyframes marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-40%); }
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-40%);
+  }
 }
 
-.menu { 
+.menu {
   display: flex;
-  height:48px;
+  height: 48px;
 }
 
-.menuInfo{
+.menuInfo {
   margin: 0 auto;
   width: 343px;
-  display:block;
+  display: block;
   margin-top: 48px;
 }
 
-.navtabTitle{
+.navtabTitle {
   margin: 0;
   margin-top: 16px;
   font-size: 22px;
   font-weight: 700;
 }
-.navtabSubTitle{
+.navtabSubTitle {
   margin: 0;
   margin-top: 16px;
   font-size: 18px;
@@ -148,7 +158,7 @@
   line-height: 21.6px;
 }
 
-.navtabText{
+.navtabText {
   margin: 0;
   margin-top: 16px;
   font-size: 14px;
@@ -157,18 +167,18 @@
   font-family: 'Rubik';
 }
 
-.navtabImg{
+.navtabImg {
   margin: 0 auto;
   max-width: 343px;
   height: 192px;
   display: block;
 }
 
-.navtabText:last-child{
+.navtabText:last-child {
   margin-bottom: 48px;
 }
 
-.navtabList{
+.navtabList {
   margin: 0;
   padding: 0;
   margin-left: 16.5px;
@@ -179,7 +189,7 @@
   margin-bottom: 48px;
 }
 
-.navtabPresents{
+.navtabPresents {
   margin: 0;
   margin-top: 16px;
   margin-bottom: 16px;
@@ -188,7 +198,7 @@
   line-height: 21px;
   font-family: 'Rubik';
 }
-.navtabButton{
+.navtabButton {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -203,7 +213,7 @@
   margin-bottom: 48px;
 }
 
-.navtabButton:hover{
+.navtabButton:hover {
   opacity: 0.8;
   cursor: pointer;
 }

@@ -1,9 +1,6 @@
-// import { useAppSelector } from '../../hooks/redux';
 import styles from './styles.module.css';
-// import { RootState } from '../../store';
 import { useActions } from '../../hooks/actions';
 import { useNavigate } from 'react-router-dom';
-// import { useEffect } from 'react';
 import logoImg from '../../assets/images/login/Logo.svg';
 import ActionButton from '../../components/ActionButton';
 import { useState } from 'react';
@@ -39,7 +36,6 @@ export default function LoginPage() {
     handleSubmit,
     formState: { errors, isValid },
   } = useForm<Inputs>();
-  
 
   const onSubmitLogin = async (data: Inputs) => {
     try {
@@ -156,7 +152,10 @@ export default function LoginPage() {
                 </span>
               )}
             </div>
-            <div className={styles.loginPage__submitButton} onClick={() => setSubmitClicked(true)}>
+            <div
+              className={styles.loginPage__submitButton}
+              onClick={() => setSubmitClicked(true)}
+            >
               <ActionButton
                 title={activeTab === 'enter' ? 'Вход' : 'Регистрация'}
                 type="submit"

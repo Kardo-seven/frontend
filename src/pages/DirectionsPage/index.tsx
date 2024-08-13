@@ -7,10 +7,10 @@ export default function DirectionsPage() {
   const navigate = useNavigate();
   const { setCurrentDirection } = useActions();
 
-function setDirection(evt: any) {
-  setCurrentDirection((evt.target as HTMLElement).textContent);
-  navigate(`${(evt.target as HTMLElement).textContent}`);
-}
+  function setDirection(evt: any) {
+    setCurrentDirection((evt.target as HTMLElement).textContent);
+    navigate(`${(evt.target as HTMLElement).textContent}`);
+  }
 
   return (
     <section className={styles.section}>

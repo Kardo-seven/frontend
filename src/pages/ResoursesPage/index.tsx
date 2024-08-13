@@ -1,4 +1,3 @@
-// import { useAppSelector } from '../../hooks/redux';
 import { useEffect } from 'react';
 import { useLazyGetResourcesQuery } from '../../store/kardo/kardo.api';
 import styles from './styles.module.css';
@@ -6,14 +5,12 @@ import HeaderArrow from '../../components/HeaderArrow';
 import videoImg from '../../assets/images/system/videoImg.png';
 
 export default function ResoursesPage() {
-
   const [triggerResources, { data: resources }] = useLazyGetResourcesQuery();
 
   useEffect(() => {
     triggerResources();
     console.log(resources);
   }, [resources]);
-
 
   return (
     <section className={styles.section}>
