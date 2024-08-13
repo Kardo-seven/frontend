@@ -9,16 +9,17 @@ import { useActions } from '../../hooks/actions';
 import ChildrenModal from "../../components/ChildrenModal";
 import Modal from "../../components/Modal";
 import FilterMenu from "../../components/FilterMenu";
-import { useLazyGetChildrenQuery } from '../../store/kardo/kardo.api'
+import { useLazyGetChildrenQuery, useLazyGetSizeKindsQuery } from '../../store/kardo/kardo.api'
 
 export default function ChildrenPage() {
+    const [triggerSize, { data: size }] = useLazyGetSizeKindsQuery();
     const [triggerChildren, { data: children }] = useLazyGetChildrenQuery();
     const location = useLocation();
     const event = location.state;
     const [activeTab, setActiveTab] = useState('people')
     const { openModal, setCurrentEvent } = useActions();
     const [currentNameDirection, setCurrentNameDirection] = useState({ value: 'WORKOUT', label: 'WORKOUT' })
-    const [currentNameLevel, setCurrentNameLevel] = useState({ value: 'PARTICIPANT', label: 'Все' })
+    const [currentNameLevel, setCurrentNameLevel] = useState({ value: 'PARTICIPANT', label: 'Дети' })
     const [currentChild, setCurrentChild] = useState<ChildData | null>(null);
     const [childMessage, setChildMessage] = useState('')
     const directionsList = [    
@@ -36,7 +37,7 @@ export default function ChildrenPage() {
 
     ]
     const levelsList = [
-        { value: 'PARTICIPANT', label: 'Все' },
+        { value: 'PARTICIPANT', label: 'Дети' },
         { value: 'EXPERT', label: 'Судьи' },
     ];
     
@@ -52,16 +53,20 @@ export default function ChildrenPage() {
             setCurrentChild(children[0])
         }
       };
-
       useEffect(() => {
+        triggerSize()    
+      }, [])
+      useEffect(() => {
+        if (size){
         const formData: ChildPersonalData = {
             directions: currentNameDirection.value,
             authorities: currentNameLevel.value,
-            size: 5,
+            size: size,
         };
         onSubmitChildren(formData);
+    }
         
-      }, [children, currentNameLevel, currentNameDirection])
+      }, [size, children, currentNameLevel, currentNameDirection])
     return (
         <>
             <Modal content={<ChildrenModal />} />
