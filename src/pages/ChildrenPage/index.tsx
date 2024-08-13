@@ -3,7 +3,6 @@ import styles from './styles.module.css';
 import { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Navtab from '../../components/Navtab';
-import { useActions } from '../../hooks/actions';
 import ChildrenModal from '../../components/ChildrenModal';
 import Modal from '../../components/Modal';
 import FilterMenu from '../../components/FilterMenu';

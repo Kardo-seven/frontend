@@ -92,6 +92,11 @@ export const api = createApi({
       }),
       providesTags: ['Event'],
     }),
+    getSizeKinds: build.query<number, void>({
+      query: () => ({
+        url: 'profile/kids-and-staff-size',
+      }),
+    }),
     getChildren: build.query<ChildData[], ChildPersonalData>({
       query: (formData) => ({
         url: `profile/kids_and_experts?${new URLSearchParams(formData).toString()}`,
@@ -128,5 +133,6 @@ export const {
   useLazyGetUserEventsQuery, 
   usePostApplyEventMutation,
   useLazyGetResourcesQuery,
-  useLazyGetChildrenQuery
+  useLazyGetChildrenQuery,
+  useLazyGetSizeKindsQuery
 } = api;
