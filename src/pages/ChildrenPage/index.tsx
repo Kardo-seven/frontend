@@ -2,25 +2,26 @@ import {
     Link,
 } from "react-router-dom";
 import styles from './styles.module.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Navtab from '../../components/Navtab'
 import { useActions } from '../../hooks/actions';
 import ChildrenModal from "../../components/ChildrenModal";
 import Modal from "../../components/Modal";
 import FilterMenu from "../../components/FilterMenu";
+import { useLazyGetChildrenQuery } from '../../store/kardo/kardo.api'
 
 export default function ChildrenPage() {
-
-
-
+    const [triggerChildren, { data: children }] = useLazyGetChildrenQuery();
     const location = useLocation();
     const event = location.state;
     const [activeTab, setActiveTab] = useState('people')
     const { openModal, setCurrentEvent } = useActions();
     const [currentNameDirection, setCurrentNameDirection] = useState({ value: 'WORKOUT', label: 'WORKOUT' })
     const [currentNameLevel, setCurrentNameLevel] = useState({ value: 'PARTICIPANT', label: 'Все' })
-    const directionsList = [
+    const [currentChild, setCurrentChild] = useState<ChildData | null>(null);
+    const [childMessage, setChildMessage] = useState('')
+    const directionsList = [    
         { value: 'WORKOUT', label: 'WORKOUT' },
         { value: 'SKATEBOARDING', label: 'SKATEBOARDING' },
         { value: 'PARKOUR', label: 'PARKOUR' },
@@ -38,18 +39,29 @@ export default function ChildrenPage() {
         { value: 'PARTICIPANT', label: 'Все' },
         { value: 'EXPERT', label: 'Судьи' },
     ];
-    /*const formData: ChildPersonalData = {
-        seasons: "Winter",
-        directions: "WORKOUT",
-        authorities: "PARTICIPANT",
-        countries: "Russia",
-        from: 2020,
-        size: 150,
-    };*/
+    
     const navigate = useNavigate();
-    console.log(currentNameDirection, currentNameLevel)
+    const onSubmitChildren = async (formData:any) => {
+        setChildMessage('Идёт загрузка')
+        await triggerChildren(formData).then((res)=>{
+            if (res.isError){
+                setChildMessage(`Ошибка`)
+            }
+          });
+        if (children){
+            setCurrentChild(children[0])
+        }
+      };
 
-
+      useEffect(() => {
+        const formData: ChildPersonalData = {
+            directions: currentNameDirection.value,
+            authorities: currentNameLevel.value,
+            size: 5,
+        };
+        onSubmitChildren(formData);
+        
+      }, [children, currentNameLevel, currentNameDirection])
     return (
         <>
             <Modal content={<ChildrenModal />} />
@@ -101,6 +113,13 @@ export default function ChildrenPage() {
                             <h3 className={styles.navtabTitle}>КАРДО — ДЕТИ</h3>
                             <FilterMenu menuList={directionsList} setCurrentName={setCurrentNameDirection} />
                             <FilterMenu menuList={levelsList} setCurrentName={setCurrentNameLevel} />
+                            <div className={styles.navtabGrid}>
+                               {children ? children.map((child)=>(
+                                <img key={child.id} onClick={()=>setCurrentChild(child)} className={(currentChild && child.id==currentChild.id) ? styles.navtabGrid__elem : `${styles.navtabGrid__elem} ${styles.navtabGrid__elem_noactive}`} alt={child.lastName} src={`https://kardo.zapto.org/${child.avatarLink}`}></img>
+                               )) :(<p className={styles.navtabTitle}>{childMessage}</p>)} 
+                            </div>
+                            <img className={styles.navtab__avatar} alt={'Записей не найдено'} src={currentChild ? `https://kardo.zapto.org/${currentChild.avatarLink}` : ''}/>
+                               <p className={styles.navtab__name}>{currentChild ? (currentChild.name + ' '+ currentChild.lastName) : ''}</p>
                         </>
                     ) : (
                         <div>

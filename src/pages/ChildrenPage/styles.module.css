@@ -119,7 +119,7 @@
     width: 343px;
     display:block;
     margin-top: 48px;
-    margin-bottom: 200px;
+    margin-bottom: 48px;
   }
   
   .navtabTitle{
@@ -178,4 +178,36 @@
   .navtabButton:hover{
     opacity: 0.8;
     cursor: pointer;
+  }
+
+  .navtabGrid{
+    margin-top: 16px;
+    display: grid;
+    grid-template-columns: repeat(5, 64px);
+    gap: 4px;
+  }
+  
+  .navtabGrid__elem{
+    width: 64px;
+    height: 64px;
+    border-radius: 100px;
+  }
+
+  .navtabGrid__elem_noactive{
+    filter: grayscale(100%); 
+  }
+
+  .navtab__avatar{
+    width: 100%;
+    height: 342px;
+    margin-top: 53px;
+  }
+
+  .navtab__name{
+    margin: 0;
+    margin-top: 16px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21.6px;
+    color: rgba(255, 67, 16, 1);
   }

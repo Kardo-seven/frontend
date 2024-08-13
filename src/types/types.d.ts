@@ -93,3 +93,25 @@ type ApplyEvent = {
   linkList: string[];
   directionEnumList: string[];
 };
+
+type ChildPersonalData = {
+  directions: string;
+  authorities: string;
+  size: integer;
+}
+
+type ChildData ={
+  id: number;
+  name: string;
+  lastName: string;
+  surName: string;
+  linkSet: [
+      {
+        link: string;
+      }
+    ];
+    about: string;
+    isChild: boolean;
+    isChildExpert: boolean;
+    avatarLink: string;
+}

@@ -6,6 +6,7 @@ import { modalReducer } from './kardo/modal.slice';
 import { popupReducer } from './kardo/popup.slice';
 import { currentUserReducer } from './kardo/profile.slice';
 import {currentEventReducer} from './kardo/event.slice'
+import { currentChildReducer } from './kardo/child.slice';
 export const store = configureStore({
   reducer: {
     [api.reducerPath]: api.reducer,
@@ -15,6 +16,7 @@ export const store = configureStore({
     popup: popupReducer,
     user: currentUserReducer,
     event: currentEventReducer,
+    child: currentChildReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(api.middleware),

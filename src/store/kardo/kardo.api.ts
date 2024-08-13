@@ -92,6 +92,11 @@ export const api = createApi({
       }),
       providesTags: ['Event'],
     }),
+    getChildren: build.query<ChildData[], ChildPersonalData>({
+      query: (formData) => ({
+        url: `profile/kids_and_experts?${new URLSearchParams(formData).toString()}`,
+      }),
+    }),
     getDocuments: build.query<DocumentData[], void>({
       query: () => ({
         url: 'about/documents',
@@ -122,5 +127,6 @@ export const {
   useLazyGetEventsQuery,
   useLazyGetUserEventsQuery, 
   usePostApplyEventMutation,
-  useLazyGetResourcesQuery
+  useLazyGetResourcesQuery,
+  useLazyGetChildrenQuery
 } = api;
