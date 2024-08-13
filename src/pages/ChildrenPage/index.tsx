@@ -7,6 +7,7 @@ import ChildrenModal from '../../components/ChildrenModal';
 import Modal from '../../components/Modal';
 import FilterMenu from '../../components/FilterMenu';
 import { useLazyGetChildrenQuery } from '../../store/kardo/kardo.api';
+import { useActions } from '../../hooks/actions';
 
 export default function ChildrenPage() {
   const [triggerChildren, { data: children }] = useLazyGetChildrenQuery();
@@ -71,7 +72,7 @@ export default function ChildrenPage() {
           <Link to="/events" className={styles.reset} />
           <h2 className={styles.headerTitle}>Дети</h2>
           <p className={styles.headerText}>
-            1сезонВсероссийской конкурс-премии Уличной Культуры испорта среди
+            1 сезон Всероссийской конкурс-премии Уличной Культуры и спорта среди
             детей
           </p>
         </div>
@@ -88,23 +89,23 @@ export default function ChildrenPage() {
             Подать заявку
           </button>
           <p className={styles.infoText}>
-            Улицысегодня— этоузнаваемые бренды, спортсмены иатлеты, танцоры,
+            Улицы сегодня— это узнаваемые бренды, спортсмены и атлеты, танцоры,
             деятели культуры, перспективные общественные проекты.
           </p>
           <p className={styles.infoText}>
-            ДоэтогомоментаКАРДОподдерживало всех представителей Уличной
-            Культуры старше 16лет, живущих иболеющих своим делом. Новремя
-            идёт. Выпросили— мыуслышали!
+            До этого момента КАРДО поддерживало всех представителей Уличной
+            Культуры старше 16лет, живущих и болеющих своим делом. Но время
+            идёт. Вы просили — мы услышали!
           </p>
           <p className={styles.infoText}>
-            1сезонВсероссийской конкурс-премии Уличной Культуры испорта среди
-            детей имолодёжи«КАРДО-ДЕТИ»даёт свой старт. Мыотберём лучших
-            покаждому изпредставленных направлений, которые будут бороться
-            зазвание победителя соревнованийКАРДО.
+            1 сезон Всероссийской конкурс-премии Уличной Культуры и спорта среди
+            детей и молодёжи «КАРДО-ДЕТИ» даёт свой старт. Мы отберём лучших
+            по каждому из представленных направлений, которые будут бороться
+            за звание победителя соревнований КАРДО.
           </p>
           <p className={styles.infoText}>
-            Чтобыпринять участие— регистрируйся нанашем сайте иподавай
-            заявку вличном кабинете вразделеКАРДО-ДЕТИ.
+            Чтобы принять участие— регистрируйся на нашем сайте и подавай
+            заявку в личном кабинете в разделе КАРДО-ДЕТИ.
           </p>
           <div className={styles.marquee}>
             <div className={styles.track}>
@@ -205,7 +206,7 @@ export default function ChildrenPage() {
                     Фестиваль <br /> с 23 ноября по 25 ноября
                   </h4>
                   <p className={styles.navtabText}>
-                    Приём заявок по8направлениям: BREAKING, PARKOUR,
+                    Приём заявок по 8 направлениям: BREAKING, PARKOUR,
                     SKATEBOARDING, WORKOUT, HIP-HOP, BMX, SCOOT, TRICKING.
                   </p>
                 </div>
