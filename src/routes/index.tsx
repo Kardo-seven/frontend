@@ -23,6 +23,7 @@ import {
   VideoContestsPage,
   ChildrenPage,
   AboutDirectionPage,
+  ProgramsPage,
 } from './components';
 
 import Layout from '../components/Layout';
@@ -54,6 +55,7 @@ const router = createBrowserRouter(
         <Route path="events/projects" element={<ProjectsPage />} />
         <Route path="events/video" element={<VideoContestsPage />} />
         <Route path="events/children" element={<ChildrenPage />} />
+        <Route path="events/programs" element={<ProgramsPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </>
