@@ -17,6 +17,7 @@ const ProjectsPage = lazy(() => import('../pages/ProjectsPage'));
 const VideoContestsPage = lazy(() => import('../pages/VideoContestPage'));
 const ChildrenPage = lazy(() => import('../pages/ChildrenPage'));
 const AboutDirectionPage = lazy(() => import('../pages/AboutDirectionPage'));
+const ProgramsPage = lazy(() => import('../pages/ProgramsPage'));
 
 export {
   LoginPage,
@@ -37,5 +38,6 @@ export {
   VideoContestsPage,
   ChildrenPage,
   AboutDirectionPage,
+  ProgramsPage,
 };
 
