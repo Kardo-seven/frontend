@@ -176,10 +176,10 @@ export default function ChildrenPage() {
               <div className={styles.navtabCard}>
                 <div className={styles.navtabContainer}>
                   <h4 className={styles.navtabSubtitle}>
-                    Онлайн регистрация <br /> с5октября по31октября
+                    Онлайн регистрация <br /> с 5 октября по 31 октября
                   </h4>
                   <p className={styles.navtabText}>
-                    Приём заявок по8направлениям: BREAKING, PARKOUR,
+                    Приём заявок по 8 направлениям: BREAKING, PARKOUR,
                     SKATEBOARDING, WORKOUT, HIP-HOP, BMX, SCOOT, TRICKING.
                   </p>
                   <button
@@ -193,17 +193,17 @@ export default function ChildrenPage() {
               <div className={styles.navtabCard}>
                 <div className={styles.navtabContainer}>
                   <h4 className={styles.navtabSubtitle}>
-                    ТОП-6 <br /> с1ноября по5ноября
+                    ТОП-6 <br /> с 1 ноября по 5 ноября
                   </h4>
                   <p className={styles.navtabText}>
-                    Отбор ТОП-6по8направлениям
+                    Отбор ТОП-6 по 8 направлениям
                   </p>
                 </div>
               </div>
               <div className={styles.navtabCard}>
                 <div className={styles.navtabContainer}>
                   <h4 className={styles.navtabSubtitle}>
-                    Фестиваль <br /> с23ноября по25ноября
+                    Фестиваль <br /> с 23 ноября по 25 ноября
                   </h4>
                   <p className={styles.navtabText}>
                     Приём заявок по8направлениям: BREAKING, PARKOUR,
