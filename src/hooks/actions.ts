@@ -7,6 +7,7 @@ import { popupActions } from '../store/kardo/popup.slice';
 import { currentUserActions } from '../store/kardo/profile.slice';
 import { currentEventActions } from '../store/kardo/event.slice'
 import { currentChildActions } from '../store/kardo/child.slice';
+import { currentDirectionActions } from '../store/kardo/direction.slice'
 
 
 const actions = {
@@ -16,7 +17,8 @@ const actions = {
   ...popupActions,
   ...currentUserActions,
   ...currentEventActions,
-  ...currentChildActions
+  ...currentChildActions,
+  ...currentDirectionActions
 };
 
 export const useActions = () => {

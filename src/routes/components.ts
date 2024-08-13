@@ -1,4 +1,5 @@
 import { lazy } from 'react';
+import AboutDirectionPage from '../pages/AboutDirectionPage/index';
 const LoginPage = lazy(() => import('../pages/LoginPage'));
 const NotFoundPage = lazy(() => import('../pages/NotFoundPage'));
 const MainPage = lazy(() => import('../pages/MainPage'));
@@ -16,6 +17,26 @@ const ResourсesPage = lazy(() => import('../pages/ResoursesPage'));
 const ProjectsPage = lazy(() => import('../pages/ProjectsPage'));
 const VideoContestsPage = lazy(() => import('../pages/VideoContestPage'));
 const ChildrenPage = lazy(() => import('../pages/ChildrenPage'));
+const AboutDirectionPage = lazy(() => import('../pages/AboutDirectionPage'));
 
-export { LoginPage, NotFoundPage, MainPage, EventsPage, DirectionsPage, ProfilePage, ContentPage, EditProfilePage, ContestsPage, SettingsAccountPage, DocumentsPage, PrizePage, ApplyPage, ResourсesPage, ProjectsPage, VideoContestsPage, ChildrenPage, };
+export {
+  LoginPage,
+  NotFoundPage,
+  MainPage,
+  EventsPage,
+  DirectionsPage,
+  ProfilePage,
+  ContentPage,
+  EditProfilePage,
+  ContestsPage,
+  SettingsAccountPage,
+  DocumentsPage,
+  PrizePage,
+  ApplyPage,
+  ResourсesPage,
+  ProjectsPage,
+  VideoContestsPage,
+  ChildrenPage,
+  AboutDirectionPage,
+};
 

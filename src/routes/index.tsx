@@ -21,7 +21,8 @@ import {
   ResourсesPage,
   ProjectsPage,
   VideoContestsPage,
-  ChildrenPage
+  ChildrenPage,
+  AboutDirectionPage,
 } from './components';
 
 import Layout from '../components/Layout';
@@ -45,6 +46,7 @@ const router = createBrowserRouter(
         <Route path="login" element={<LoginPage />} />
         <Route path="main" element={<MainPage />} />
         <Route path="directions" element={<DirectionsPage />} />
+        <Route path="directions/:direction" element={<AboutDirectionPage />} />
         <Route path="events" element={<EventsPage />} />
         <Route path="events/apply/:id" element={<ApplyPage />} />
         <Route path="events/contests" element={<ContestsPage />} />

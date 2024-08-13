@@ -21,25 +21,22 @@ export default function ApplyPage() {
   const onSubmit = (data: any) => {
     activeSlide < 3
       ? setActiveSlide(activeSlide + 1)
-      : postApplyEvent(
-          {
-            data: {
-              name: data.name,
-              lastName: data.lastName,
-              surName: data.surName,
-              phone: data.phone,
-              email: data.email,
-              address: data.address,
-              birthday: data.birthday,
-              gender: data.gender,
-              typeOfSelection: data.typeOfSelection,
-              linkList: [data.linkList],
-              directionEnumList: data.directionEnumList,
-              
-            },
-            eventId
-          }
-        ).unwrap();
+      : postApplyEvent({
+          data: {
+            name: data.name,
+            lastName: data.lastName,
+            surName: data.surName,
+            phone: data.phone,
+            email: data.email,
+            address: data.address,
+            birthday: data.birthday,
+            gender: data.gender,
+            typeOfSelection: data.typeOfSelection,
+            linkList: [data.linkList],
+            directionEnumList: data.directionEnumList,
+          },
+          eventId,
+        }).unwrap();
   };
 
   return (
@@ -97,7 +94,7 @@ export default function ApplyPage() {
                   placeholder="Сыктывкар, Республика Коми, РФ"
                 />
               </div>
-              {/* {event.title === 'Видеоконкурс' && (
+              {event.title === 'Видеоконкурс' && (
                 <div>
                   <p>Видеозаявка</p>
                   <div className={styles.actionButtonDownload}>
@@ -116,7 +113,7 @@ export default function ApplyPage() {
                     />
                   </div>
                 </div>
-              )} */}
+              )}
               <h3 className={styles.main__subtitle}>Направления</h3>
               <div className={styles.checkboxesContainer}>
                 <div>
