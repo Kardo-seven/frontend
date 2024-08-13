@@ -1,16 +1,14 @@
 import ActionButton from '../../components/ActionButton';
-import './select.css'
+import './select.css';
 import HeaderArrow from '../../components/HeaderArrow';
 import styles from './styles.module.css';
 import Select from 'react-select';
 
 export default function SettingsAccountPage() {
-
   const options = [
     { value: 'RU', label: 'Русский' },
     { value: 'EN', label: 'Английский' },
-
-  ]
+  ];
   return (
     <section className={styles.section}>
       <HeaderArrow title="Настройки аккаунта" />
