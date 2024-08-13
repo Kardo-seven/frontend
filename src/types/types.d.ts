@@ -92,6 +92,12 @@ type ApplyEvent = {
   typeOfSelection: string;
   linkList: string[];
   directionEnumList: string[];
+  download?: {
+    id: 0;
+    title: 'string';
+    type: 'string';
+    link: 'string';
+  };
 };
 
 type ChildPersonalData = {

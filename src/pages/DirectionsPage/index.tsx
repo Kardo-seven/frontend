@@ -7,7 +7,7 @@ export default function DirectionsPage() {
   const navigate = useNavigate();
   const { setCurrentDirection } = useActions();
 
-function setDirection(evt: React.MouseEvent<HTMLDivElement>) {
+function setDirection(evt: any) {
   setCurrentDirection((evt.target as HTMLElement).textContent);
   navigate(`${(evt.target as HTMLElement).textContent}`);
 }
