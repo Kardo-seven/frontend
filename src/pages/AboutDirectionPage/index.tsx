@@ -17,7 +17,7 @@ import BMX from '../../assets/images/aboutDirection/BMX.png';
 import breaking from '../../assets/images/aboutDirection/Breaking.png';
 import skate from '../../assets/images/aboutDirection/Skate.png';
 import tricking from '../../assets/images/aboutDirection/Tricking.png';
-import parkour from '../../assets/images/aboutDirection/Pakour.png';
+import parkour from '../../assets/images/aboutDirection/Parkour.png';
 import freerun from '../../assets/images/aboutDirection/Freerun.png';
 import djing from '../../assets/images/aboutDirection/Djing.png';
 import graffiti from '../../assets/images/aboutDirection/Graffiti.png';
