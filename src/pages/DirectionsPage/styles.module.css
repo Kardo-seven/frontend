@@ -5,10 +5,88 @@
 }
 
 .mainPage {
-  font-size: 25px;
   display: flex;
+  flex-direction: column;
+  justify-content: start;
+  height: 100%;
+  width: var(--max-desktop-width);
+}
+
+.mainPage__title {
+  font-family: 'Grtsk Tera';
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 120%;
+  padding: 44px 16px 22px 16px;
+  box-sizing: border-box;
+  margin: 0;
+  width: 100%;
+}
+
+.mainPage__directionsList {
+  flex: 1 1 auto;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 56px 0;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  width: var(--max-desktop-width);
+  row-gap: 16px;
+  min-height: 1182px;
+}
+
+.mainPage__directionsItem {
+  position: relative;
+  width: 343px;
+  height: 82px;
+}
+
+.mainPage__directionsText {
+  color: #fff;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 344px;
+  height: 82px;
+  font-family: 'Grtsk Tera';
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 120%;
+  margin: 0;
+  padding: 20px 16px 12px;
+  box-sizing: border-box;
+}
+.mainPage__directionsText_bmx {
+  background-image: url('../../assets/images/directions/CoverBMX.png');
+}
+.mainPage__directionsText_breaking {
+  background-image: url('../../assets/images/directions/CoverBreaking.png');
+}
+.mainPage__directionsText_workout {
+  background-image: url('../../assets/images/directions/CoverWorkout.png');
+}
+.mainPage__directionsText_graffiti {
+  background-image: url('../../assets/images/directions/CoverGraffiti.png');
+}
+.mainPage__directionsText_djing {
+  background-image: url('../../assets/images/directions/CoverDjing.png');
+}
+.mainPage__directionsText_parkour {
+  background-image: url('../../assets/images/directions/CoverParkour.png');
+}
+.mainPage__directionsText_skate {
+  background-image: url('../../assets/images/directions/CoverSk8.png');
+}
+.mainPage__directionsText_scoot {
+  background-image: url('../../assets/images/directions/CoverScoot.png');
+  padding: 5px 16px 0;
+}
+.mainPage__directionsText_tricking {
+  background-image: url('../../assets/images/directions/CoverTrick.png');
+}
+.mainPage__directionsText_freerun {
+  background-image: url('../../assets/images/directions/CoverFreerun.png');
+}
+.mainPage__directionsText_hiphop {
+  background-image: url('../../assets/images/directions/CoverHipHop.png');
 }

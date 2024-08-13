@@ -174,3 +174,28 @@
 .form__navspot_active {
   background-color: var(--Base-Carrot);
 }
+
+.actionButton {
+  color: var(--Base-White);
+  width: 100%;
+  margin: 0 auto;
+  height: 48px;
+  border: none;
+  background-color: var(--Base-Carrot);
+  padding: 10px 24px;
+  box-sizing: border-box;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 120%;
+  transition: all 0.3s ease;
+}
+.actionButtonDownload {
+  margin-bottom: 33px;
+  margin-top: 8px;
+}
+
+.actionButton_download {
+  position: absolute;
+  width: 343px;
+  text-align: center;
+}

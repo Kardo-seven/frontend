@@ -45,6 +45,7 @@ export default function ProfilePage() {
   useEffect(() => {
     {
       triggerEvents();
+      console.log(events);
     }
   }, [events]);
 
