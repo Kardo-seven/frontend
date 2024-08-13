@@ -1,0 +1,19 @@
+.control {
+  width: 343px;
+  padding: 10px;
+  border: 2px solid var(--Base-White);
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.menu {
+  background-color: var(--Base-White);
+}
+
+.option {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 150%;
+  color: var(--Base-Black);
+  padding: 10px;
+}
