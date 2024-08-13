@@ -3,7 +3,7 @@
   padding: 0;
   background-color: var(--Base-Black);
   width: 375px;
-  height: calc(100vh - 56px);
+  height: calc(100% - 56px);
   position: fixed;
   top: -14px;
   display: none;
