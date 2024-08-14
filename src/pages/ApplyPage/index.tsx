@@ -5,8 +5,10 @@ import { useForm } from 'react-hook-form';
 import ActionButton from '../../components/ActionButton';
 import { useState } from 'react';
 import { usePostApplyEventMutation } from '../../store/kardo/kardo.api';
+import { useNavigate } from 'react-router-dom';
 
 export default function ApplyPage() {
+  const navigate = useNavigate();
   const event = useAppSelector((state) => state.event.currentEvent);
   const eventId = event.id.toString();
   const user = useAppSelector((state) => state.user.currentUser);
@@ -21,7 +23,7 @@ export default function ApplyPage() {
   const onSubmit = (data: any) => {
     activeSlide < 3
       ? setActiveSlide(activeSlide + 1)
-      : postApplyEvent({
+      :  postApplyEvent({
           data: {
             name: data.name,
             lastName: data.lastName,
@@ -37,6 +39,7 @@ export default function ApplyPage() {
           },
           eventId,
         }).unwrap();
+        if (activeSlide === 3) navigate('/profile')
   };
 
   return (
